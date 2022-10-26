@@ -1,0 +1,79 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // CSS only
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous')
+    link(rel='stylesheet' href='../css/urban.css')
+    title Shop with us!
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    .container-fluid
+        a.navbar-brand(href='index.html') Urban Farming Initiative
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                li.nav-item
+                    a.nav-link.active(aria-current='page' href='index.html') Home
+                li.nav-item
+                    a.nav-link(href='#') Link
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                        | Account
+                    ul.dropdown-menu
+                        li
+                            a.dropdown-item(href='auth/login.html') Login
+                        li
+                            a.dropdown-item(href='auth/register.html') Sign Up
+.container
+    .container1
+        .container-fluid
+            img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg' style='width: 100%; height: 100%; object-fit: cover')
+    #regForm.form.registration(action='/register' name='register' method='POST')
+        h3.heading
+            | Shop with us. 
+            br
+            |  A product for everyone!
+        .row
+            #cell.col
+                label First name
+                br
+                input
+            #cell.col
+                label Last name
+                br
+                input
+            #cell.col
+                label Gender
+                br
+                input
+        .row
+            #cell.col
+                label Date of Birth
+                br
+                input
+            #cell.col
+                label Email
+                br
+                input
+            #cell.col
+                label Phone Number
+                br
+                input
+        .row
+            .col
+                label Location / District
+                br
+                input
+            #cell.col
+                label Password
+                br
+                input
+            #cell.col
+                label Confirm Password
+                br
+                input
+        a.btn.btn-primary.card-button(href='clientDashboard.html') Register
+#footer.container-fluid
+script(src='css/bootstrap/js/bootstrap.bundle.js')
