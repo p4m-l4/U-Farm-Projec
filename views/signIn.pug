@@ -26,12 +26,12 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
                             a.dropdown-item(href='auth/login.html') Login
                         li
                             a.dropdown-item(href='auth/register.html') Sign Up
-.row
+.row.signinNav
     .col-6
-        .container-fluid
-            img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg' style='width: 100%; height: 100%; object-fit: cover')
+        .container4
+            img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg')
     .col-6 
-        form
+        form.signinForm(action='/user/signIn' name='signIn' method='POST')
             #signIn.container-fluid(action='submit')
                 h3 Welcome to U-farm. Providing a product for all!
                 h7 Enter your username to access your account
@@ -42,10 +42,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
                     .col-4(name='password') Password:
                     input#input.col-6
                 .row
-                    a.btn.signIn(action='/') Sign In
+                    a.btn.signIn(href='/dashboard/agricDashboard' style='margin-left: 400px') Sign In
                 .row
-                    a.btn.signIn(action='/') Forgot password?
+                    a.btn.signIn(href='/' style='margin-left: 400px') Forgot password?
                 .row
-                    a.btn(action='/') Don&apos;t have an account? Click here to register
+                    a.btn(href='/dashboard/agricDashboard') Don&apos;t have an account? Click here to register
 #footer.container-fluid
 script(src='css/bootstrap/js/bootstrap.bundle.js')

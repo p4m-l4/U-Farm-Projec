@@ -30,13 +30,16 @@
 
 .cardc {
     width: 20%;
-    height: 10%;
+    height: 15%;
     margin: 20px;
-    border-style: initial;
-    border-color: black; 
-    border-width: 2px;
+    border-style: double;
+    border-color: rgba(0, 0, 0, 0.268); 
+    border-width: 1px;
 }
 
+.items{
+    margin-bottom: 10%;
+}
 .card-title {
     margin-left: 10%;
 }
@@ -116,6 +119,12 @@
 }
 #imgPic{
     object-fit: cover;
+    height: 100%;
+    width:100%;
+}
+.container4{
+    height: 100%;
+    width:100%;
 }
 
 #signIn{
@@ -149,4 +158,28 @@
 
 .registration{
     text-align: center;
+}
+
+.container3 {
+    background-color: rgb(147, 147, 147);
+    width: 30vh;
+    height: 80vh;
+    text-align: center;
+}
+.signinNav{
+    padding: 0;
+}
+.signinForm{
+    padding-top: 60px;
+    padding-left: 2px;
+}
+/* selection file */
+.selection{
+    height: 80vh;
+    text-align: center;
+    padding: 20vh; 
+}
+
+.role{
+    margin-top: 20px;
 }

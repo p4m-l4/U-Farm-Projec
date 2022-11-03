@@ -18,10 +18,9 @@ router.post('/registeragricofficer', async (req, res) => {
             res.redirect("/dashboard/agricDashboard")
         });
     } catch (error) {
-        res.status(400).send('Login failed');
+        res.status(400).send('Registration failed');
         console.log(error)
     }
-    res.send("Registration successful!");
 });
 
 router.get("/registerurbanfarmer", (req, res) => {
@@ -52,7 +51,9 @@ router.get("/signIn", (req, res) => {
 	res.render("signIn");
 });
 
-
+router.get("/farmer", (req, res) => {
+	res.render("farmeroSignin");
+});
 
 
 module.exports = router;

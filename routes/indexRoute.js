@@ -5,8 +5,8 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
-// router.post('/home', (request, response) => {
-//     console.log(request.body);
-// });
+router.get("/role", (req, res) => {
+	res.render("roleSelect");
+});
 
 module.exports = router;

@@ -26,65 +26,69 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
                             a.dropdown-item(href='/') Login
                         li
                             a.dropdown-item(href='/') Sign Up
-.container
-    #regForm.form.registration(action='/register' name='register' method='POST')
-        h3.heading Farmer One Registration Form
-        .row
-            #cell.col
-                label(name='firstName') First name
-                br
-                input
-            #cell.col
-                label(name='lastName') Last name
-                br
-                input
-            #cell.col
-                label(name='gender') Gender
-                br
-                input
-            #cell.col
-                label(name='birthDate') Date of Birth
-                br
-                input
-        .row
-            #cell.col
-                label(name='phoneNumber') Phone Number
-                br
-                input
-            #cell.col
-                label(name='NIN') Enter National ID number
-                br
-                input
-            .col
-                label(name='userID') Unique Farmer One ID
-                br
-                input
-            .col
-                label(name='registrationDate') Date of registration
-                br
-                input
-        .row
-            .col
-                label(name='activities') Activities involved in
-                br
-                input
-            .col
-                label(name='ward') Select ward
-                br
-                input
-            .col
-                label(name='wardDuration') Duration of stay in ward
-                br
-                input
-            .col
-                label(name='residence') Residence type
-                br
-                input
-        .row
-            .col
-                label(name='directionsHome') Directions to home
-                br
-                input.text
-        a.btn.btn-primary.card-button(action='/' method='POST') Register
+.row.signinNav
+    .col-6
+        .container4
+            img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg')
+    .col-6 
+        #regForm.form.registration(action='/register' name='register' method='POST')
+            h3.heading Farmer One Registration Form
+            .row
+                #cell.col
+                    label(name='firstName') First name
+                    br
+                    input
+                #cell.col
+                    label(name='lastName') Last name
+                    br
+                    input
+                #cell.col
+                    label(name='gender') Gender
+                    br
+                    input
+                #cell.col
+                    label(name='birthDate') Date of Birth
+                    br
+                    input
+            .row
+                #cell.col
+                    label(name='phoneNumber') Phone Number
+                    br
+                    input
+                #cell.col
+                    label(name='NIN') Enter National ID number
+                    br
+                    input
+                .col
+                    label(name='userID') Unique Farmer One ID
+                    br
+                    input
+                .col
+                    label(name='registrationDate') Date of registration
+                    br
+                    input
+            .row
+                .col
+                    label(name='activities') Activities involved in
+                    br
+                    input
+                .col
+                    label(name='ward') Select ward
+                    br
+                    input
+                .col
+                    label(name='wardDuration') Duration of stay in ward
+                    br
+                    input
+                .col
+                    label(name='residence') Residence type
+                    br
+                    input
+            .row
+                .col
+                    label(name='directionsHome') Directions to home
+                    br
+                    input.text
+            a.btn.btn-primary.card-button(action='/' method='POST') Register
 #footer.container-fluid
 script(src='css/bootstrap/js/bootstrap.bundle.js')
