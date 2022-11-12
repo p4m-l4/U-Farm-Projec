@@ -10,94 +10,93 @@ head
 nav.navbar
     .container-fluid
         a.navbar-brand(href='/') Urban Farming Initiative
-form.forms
-    .container-fluid
-        #regForm.form.registration.container4(action='/register' name='register' method='POST')
-            h3.heading Produce Upload Form
-            .row
-                #cell.col-4
-                    label Farmer ID
-                    br
-                    input.input(type="text" name='userID')
-                #cell.col-4
-                    label Upload image
-                    br
-                    input.input(type="text" name='productImage' alt='Select file')
-                #cell.col-4
-                    label Product name
-                    br
-                    input.input(type="text" name='productName')
-            .row
-                #cell.col-4
-                    label Product type
-                    br
-                    select.form-select(aria-label='Default select example')
-                        option(selected='') Select one
-                        option(value='1') Organic
-                        option(value='2') Non-organic
-                #cell.col-4
-                    label Date of upload
-                    br
-                    input.input(type='date' name='uploadDate')
-                #cell.col-4
-                    label Availability
-                    br
-                    select.form-select(aria-label='Default select example')
-                        option(selected='') Select one
-                        option(value='1') Available
-                        option(value='2') N/A
-            .row
-                #cell.col-4
-                    label Product sub-group
-                    br
-                    select.form-select(aria-label='Default select example')
-                        option(selected='') Select one
-                        option(value='1') Dairy products
-                        option(value='2') Cereal/Grain products
-                        option(value='3') Butcher/ meats
-                        option(value='4') Fruits
-                        option(value='5') Vegetables
-                        option(value='6') Oils
-                        option(value='7') Spices
-                        option(value='8') Other products
-                #cell.col-4
-                    label Unit cost (UGX)
-                    br
-                    input.input(type='number' name='unitCost')
-                #cell.col-4
-                    label Quantity Available
-                    br
-                    input.input(type='number' name='quantityAvailable')
-            .row
-                #cell.col-4
-                    label Mode of payment
-                    br
-                    select.form-select(aria-label='Default select example')
-                        option(selected='') Select one
-                        option(value='1') Cash
-                        option(value='2') Mobile Money
-                #cell.col-4
-                    label Mode of delivery
-                    br
-                    select.form-select(aria-label='Default select example')
-                        option(selected='') Select one
-                        option(value='1') Pick up
-                        option(value='2') Home delivery
-                #cell.col-4
-                    label Residential Ward
-                    br
-                    select.form-select(aria-label='Default select example')
-                        option(selected='') Select one
-                        option(value='1') Ward 1
-                        option(value='2') Ward 2
-                        option(value='3') Ward 3
-                        option(value='4') Ward 4
+form.form.container4(action='/upload' name='uploadForm' method='post')
+    h3.heading Produce Upload Form
+    .row
+        #cell.col-4
+            label Farmer ID
+                br
+                input.input(type="text" name='userID')
+        #cell.col-4
+            label Upload image
+            br
+            input.input(type="text" name='productImage' alt='Select file')
+        #cell.col-4
+            label Product name
+            br
+            input.input(type="text" name='productName')
+    .row
+        #cell.col-4
+            label Product type
+            br
+            select.form-select(aria-label='Default select example')
+                option(selected='') Select one
+                option(value='1') Organic
+                option(value='2') Non-organic
+        #cell.col-4
+            label Date of upload
+            br
+            input.input(type='date' name='uploadDate')
+        #cell.col-4
+            label Availability
+            br
+            select.form-select(aria-label='Default select example')
+                option(selected='') Select one
+                option(value='1') Available
+                option(value='2') N/A
+    .row
+        #cell.col-4
+            label Product sub-group
+            br
+            select.form-select(aria-label='Default select example')
+                option(selected='') Select one
+                option(value='1') Dairy products
+                option(value='2') Cereal/Grain products
+                option(value='3') Butcher/ meats
+                option(value='4') Fruits
+                option(value='5') Vegetables
+                option(value='6') Oils
+                option(value='7') Spices
+                option(value='8') Other products
+        #cell.col-4
+            label Unit cost (UGX)
+            br
+            input.input(type='number' name='unitCost')
+        #cell.col-4
+            label Quantity Available (Kgs)
+            br
+            input.input(type='number' name='quantityAvailable')
+    .row
+        #cell.col-4
+            label Mode of payment
+            br
+            select.form-select(aria-label='Default select example')
+                option(selected='') Select one
+                option(value='1') Cash
+                option(value='2') Mobile Money
+        #cell.col-4
+            label Mode of delivery
+            br
+            select.form-select(aria-label='Default select example')
+                option(selected='') Select one
+                option(value='1') Pick up
+                option(value='2') Home delivery
+        #cell.col-4
+            label Residential Ward
+            br
+            select.form-select(aria-label='Default select example')
+                option(selected='') Select one
+                option(value='1') Ward 1
+                option(value='2') Ward 2
+                option(value='3') Ward 3
+                option(value='4') Ward 4
             #cell.row
                 .mb-3
                     label.form-label(for='exampleFormControlTextarea1') Directions for pick up
                     textarea#exampleFormControlTextarea1.form-control(rows='3')
-            .row
-                button.btn.btn-primary(type='submit') Submit
+    .row
+        button.btn.btn-primary(type='submit') Upload
+
 .col-6.container-fluid
 #footer.container-fluid
     .row.foot
@@ -112,4 +111,5 @@ form.forms
                 .li.footer-txt  Contact us 
                 .li.footer-txt  Log in
         .col-3
+script(src='../app.js')
 script(src='css/bootstrap/js/bootstrap.bundle.js')

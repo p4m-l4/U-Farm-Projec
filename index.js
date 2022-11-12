@@ -13,14 +13,14 @@ const expressSession = require("express-session")({
 	saveUninitialized: false,
 });
 
-//Import the user model
+//Import the SignIn model
 const User = require("./models/User");
 
 //Setting up routes OR Importing route files
-const routeHome = require("./routes/indexRoute");
-const routeRegister = require("./routes/registerRoutes");
-const routeDashboard = require("./routes/dashboardRoutes");
-const routeProduce = require("./routes/productsRoute");
+const routesHome = require("./routes/indexRoute");
+const routesRegister = require("./routes/registerRoutes");
+const routesDashboard = require("./routes/dashboardRoutes");
+const routesProduce = require("./routes/productsRoute");
 
 //Instantiation
 const app = express();
@@ -60,10 +60,10 @@ passport.deserializeUser(User.deserializeUser());
 // });
 
 //Using routes - custom middleware because we have designed them by ourselves but have app.use
-app.use("/", routeHome);
-app.use("/user", routeRegister);
-app.use("/dashboard", routeDashboard);
-app.use("/produce", routeProduce);
+app.use("/", routesHome);
+app.use("/user", routesRegister);
+app.use("/dashboard", routesDashboard);
+app.use("/produce", routesProduce);
 
 //Invalid route handling
 app.get('*', (req, res) => {

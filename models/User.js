@@ -70,7 +70,7 @@ const userSchema = new mongoose.Schema({
 		required: false,
 		trim: true,
 	},
-	location: {
+	directionsHome: {
 		type: String,
 		required: false,
 		trim: true,

@@ -9,13 +9,13 @@ head
     title Agric Officer Registration Form
 nav.navbar
     .container-fluid
-        a.navbar-brand(action='/') Urban Farming Initiative
+        a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
         
 .container
-    form(action='/user/registeragricofficer' method='post')
-        h3.heading Farmer One Registration Form
+    form(action='/user/registeragricofficer' name='registerAgric' method='post')
+        h3.heading Agricultural Officer Registration Form
         .row
             #cell.col.input-control
                 label(for="firstName") First name
@@ -96,7 +96,8 @@ nav.navbar
                 .error
                 br
                 input.text(type='text' name='directionsHome')
-            
+        
+        .row
         button.btn.btn-primary.card-button(type='submit') Register
 
 
@@ -113,5 +114,5 @@ nav.navbar
                 .li.footer-txt  Contact us 
                 .li.footer-txt  Log in
         .col-3
-script(src='app.js')
+script(src='./app.js')
 script(src='css/bootstrap/js/bootstrap.bundle.js')

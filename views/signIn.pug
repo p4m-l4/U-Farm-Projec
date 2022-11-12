@@ -12,7 +12,7 @@ nav.navbar
         a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
-        
+
 .row.signinNav
     .col-6
         .container4
@@ -24,16 +24,18 @@ nav.navbar
                 h7 Enter your username to access your account
                 .row
                     .col-4(name='username') Username:
-                    input#input.col-6
+                    input#input.col-6(type='text' name='userID')
                 .row
                     .col-4(name='password') Password:
-                    input#input.col-6
+                    input#input.col-6(type='text' name='password')
                 .row
                     a.btn.signIn(href='/dashboard/clientdashboard' style='margin-left: 400px') Sign In
                 .row
                     a.btn.signIn(href='/' style='margin-left: 400px') Forgot password?
                 .row
-                    a.btn(href='/user/registerGeneral') Don&apos;t have an account? Click here to register
+                    div
+                        | Don&apos;t have an account? Click 
+                        a(href='/user/registerGeneral') here to register
 #footer.container-fluid
     .row.foot
         .col-4

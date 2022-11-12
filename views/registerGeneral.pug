@@ -7,7 +7,7 @@ head
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous')
     link(rel='stylesheet' href='../css/urban.css')
     title Shop with us!
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+nav.navbar
     .container-fluid
         a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
@@ -18,52 +18,54 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
         .container4
             img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg')
     .col-6 
-        form.signinForm
-        #regForm.form.registration(action='/user/registerGeneral' name='register' method='post')
+        form.signinForm.form(action='/user/registerGeneral' name='registerGeneral' method='post')
             h3.heading
                 | Shop with us. 
                 br
                 |  A product for everyone!
-            .row
-                #cell.col
-                    label(for='firstName') First name
-                    br
-                    input(type="text" name='firstName')
-                #cell.col
-                    label(for='lastName') Last name
-                    br
-                    input(type="text" name='lastName')
-                #cell.col
-                    label(for='gender') Gender
-                    br
-                    input(type="text" name='gender')
-            .row
-                #cell.col
-                    label(for='birthDate') Date of Birth
-                    br
-                    input(type="text" name='birthDate')
-                #cell.col
-                    label(for='email') Email
-                    br
-                    input(type="text" name='email')
-                #cell.col
-                    label(for='phoneNumber') Phone Number
-                    br
-                    input(type="text" name='phoneNumber')
-            .row
-                .col
-                    label(for='location') Location / District
-                    br
-                    input(type="text" name='location')
-                #cell.col
-                    label(for='password') Password
-                    br
-                    input(type="text" name='password')
-                #cell.col
-                    label(ofor='confirmpassword') Confirm Password
-                    br
-                    input(type="text" name='confirmpassword')
-            a.btn.btn-primary.card-button(type='submit' href='/') Register
+                .row
+                    #cell.col
+                        label(for='firstName') First name
+                        br
+                        input(type="text" name='firstName')
+                    #cell.col
+                        label(for='lastName') Last name
+                        br
+                        input(type="text" name='lastName')
+                    #cell.col
+                        label(for='gender') Gender
+                        br
+                        input(type="text" name='gender')
+                .row
+                    #cell.col
+                        label(for='birthDate') Date of Birth
+                        br
+                        input(type="date" name='birthDate')
+                    #cell.col
+                        label(for='email') Email
+                        br
+                        input(type="text" name='userID')
+                    #cell.col
+                        label(for='phoneNumber') Phone Number
+                        br
+                        input(type="number" name='phoneNumber')
+                .row
+                    .col
+                        label(for='location') Location / District
+                        br
+                        input(type="text" name='location')
+                    #cell.col
+                        label(for='password') Password
+                        br
+                        input(type="text" name='password')
+                    #cell.col
+                        label(ofor='confirmpassword') Confirm Password
+                        br
+                        input(type="text" name='confirmpassword')
+
+                .row
+                button.btn.btn-primary.card-button(type='submit') Register
+            
 #footer.container-fluid
     .row.foot
         .col-4

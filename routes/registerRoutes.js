@@ -49,7 +49,7 @@ router.post("/registerurbanfarmer", async (req, res) => {
             if (error) {
                 throw error
             }
-            res.redirect("/dashboard/farmerdashboard")
+            res.redirect("/role")
         });
         }
         
@@ -68,11 +68,8 @@ router.post("/registerGeneral", async (req, res) => {
 		const user = new User(req.body);
 
 		let uniqueID = await User.findOne({ userID: req.body.userID });
-		let uniqueNIN = await User.findOne({ uniqueNIN: req.body.NIN });
 		if (uniqueID) {
 			return res.status(400).send("This ID is already in use.");
-		} else if (uniqueNIN) {
-			return res.status(400).send("This National ID number is already in use.");
 		} else {
 			await User.register(user, req.body.password, (error) => {
 				if (error) {
@@ -87,26 +84,23 @@ router.post("/registerGeneral", async (req, res) => {
 	}
 });
 
-router.get("/registerfarmerone", (req, res) => {
-	res.render("registerfo");
+router.get("/registerFarmer", (req, res) => {
+	res.render("registerFarmer");
 });
-router.post("/registerfarmerone", async (req, res) => {
+router.post("/registerFarmer", async (req, res) => {
 	console.log(req.body);
 	try {
         const user = new User(req.body);
 
         let uniqueID = await User.findOne({userID: req.body.userID});
-        let uniqueNIN = await User.findOne({uniqueNIN: req.body.NIN});
         if (uniqueID) {
             return res.status(400).send("This ID is already in use.")
-        } else if (uniqueNIN) {
-            return res.status(400).send("This National ID number is already in use.")
         } else {
             await User.register(user, req.body.password,(error) => {
             if (error) {
                 throw error
             }
-            res.redirect("/dashboard/agricdashboard")
+            res.redirect("/role")
         });
         }
         
