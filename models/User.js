@@ -34,6 +34,7 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: false,
 		trim: true,
+		unique: true,
 	},
 	registrationDate: {
 		type: Date,
@@ -63,7 +64,17 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: false,
 		trim: true,
-	}
+	},
+	email: {
+		type: String,
+		required: false,
+		trim: true,
+	},
+	location: {
+		type: String,
+		required: false,
+		trim: true,
+	},
 });
 
 userSchema.plugin(passportLocalMongoose, {

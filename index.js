@@ -65,10 +65,10 @@ app.use("/user", routeRegister);
 app.use("/dashboard", routeDashboard);
 app.use("/produce", routeProduce);
 
-//Routes
-// app.get('/', (request, response) => {
-//     response.sendFile(__dirname + 'index')
-// });
+//Invalid route handling
+app.get('*', (req, res) => {
+    res.send('404! File not found.');
+});
 
 //Final line in code
 app.listen(5000, () => console.log("Working!"));

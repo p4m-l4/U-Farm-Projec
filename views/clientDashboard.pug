@@ -7,86 +7,85 @@ head
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
     link(rel='stylesheet' href='../css/urban.css')
     title Urban Farming Initiative - Client Dashboard
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+nav.navbar
     .container-fluid
-        a.navbar-brand(action='/') Urban Farming Initiative
+        a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
-        #navbarSupportedContent.collapse.navbar-collapse
-            ul.navbar-nav.me-auto.mb-2.mb-lg-0
-                li.nav-item
-                    a.nav-link.active(aria-current='page' action='/') Home
-                li.nav-item
-                    a.nav-link(action='/') Link
-                li.nav-item.dropdown
-                    a.nav-link.dropdown-toggle(action='/' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-                        | Account
-                    ul.dropdown-menu
-                        li
-                            a.dropdown-item(action='/') Login
-                        li
-                            a.dropdown-item(action='/') Sign Up
+        
 .container-fluid
-    .container-fluid(style='background-color: rgb(79, 160, 25); height: 30vh')
+    .container-fluid.client-nav
         .row
             #cell.col
-                label(style='margin: 30px')
+                label.client-search-txt 
                     strong What can we get you?
                 br
-                input(style='width: 50vh; height: 5vh')
-    .row
-        a.button(action='/') Sign In
-    br
-    .row(style='text-align:center;')
-        a.button(action='/user/registerGeneral')
-        | Dont have an account? Click here to register
-.container-fluid(style='background-color: rgb(255, 255, 255); height: 70vh')
+                input.client-search(alt='Search by product or category')
+        .row
+            a.button(href='/dashboard/clientDashboard') Sign In
+        br
+        .row(style='text-align: center;')
+            a.button(action='/user/registerGeneral')
+            | Dont have an account? Click here to register
+.container-fluid(style='background-color: rgb(255, 255, 255); height: 100vh')
     .container-fluid
-        .row.items
-
+        .row.items1
             .cardc
                 img.card-img-top(src='https://media.istockphoto.com/photos/various-kinds-of-dairy-products-on-a-rustic-wooden-table-picture-id1226425140?k=20&m=1226425140&s=170667a&w=0&h=-XERHeXi1g9qbpU4Nak5lzTR4XqHIhIlEBC6Ijw4Pzg=' alt='...')
                 .row(style='border-color: black; border-width: 2px')
-                    h7.card-title
+                    h7.card-title.item-heading
                         strong Dairy products
 
             .cardc
                 img.card-img-top(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsXx2dGXT239s5leMlTQ0USKeZubhlyi3oBlhfBfG0zyPBy5LXZ1X8IQTrMmhRLuC6ku8&usqp=CAU' alt='...')
                 .card-body
-                    h7.card-title
+                    h7.card-title.item-heading
                         strong Cereal/Grain products
 
             .cardc
                 img.card-img-top(src='https://thumbs.dreamstime.com/b/fresh-raw-meat-beef-pork-chicken-wooden-background-38633993.jpg' alt='...')
                 .card-body
-                    h7.card-title
+                    h7.card-title.item-heading
                         strong Butcher/ meats
 
             .cardc
                 img.card-img-top(src='https://w0.peakpx.com/wallpaper/865/381/HD-wallpaper-different-fruits-background-with-fruits-pineapple-mango-grapes-strawberries-kiwi-bananas-oranges-plums.jpg' alt='...')
                 .card-body
-                    h7.card-title
+                    h7.card-title.item-heading
                         strong Fruits
-        .row.items
-            .cardc.h-100
+        .row.items2
+            .cardc
                 img.card-img-top(src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Ecologically_grown_vegetables.jpg/1200px-Ecologically_grown_vegetables.jpg' alt='...')
                 .card-body
-                    h7.card-title
+                    h7.card-title.item-heading
                         strong Vegetables
-            .cardc.h-100
+            .cardc
                 img.card-img-top(src='https://s20427.pcdn.co/wp-content/uploads/2017/01/The-Top-8-Healthiest-Cooking-Oils.jpg' alt='...')
                 .row
-                    h7.card-title
+                    h7.card-title.item-heading
                         strong Oils
-            .cardc.h-100
+            .cardc
                 img.card-img-top(src='https://static.toiimg.com/thumb/74416043.cms?width=400&height=300&resizemode=4&imgsize=1947366' alt='...')
                 .card-body
-                    h7.card-title
+                    h7.card-title.item-heading
                         strong Spices
-            .cardc.h-100
+            .cardc
                 img.card-img-top(src='https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-search-icon-png-image_927190.jpg' alt='...')
                 .card-body
-                    h7.card-title
+                    h7.card-title.item-heading
                         strong Other products
+.col-6.container-fluid
 #footer.container-fluid
+    .row.foot
+        .col-4
+            p.footer-txt A network by the farmers for the farmers! Join the ever expanding U-Farm network today.
+            .br
+        .col-5
+            p.footer-txt  Not a farmer? Browse the different products on display and find farmers near you.
+            .br
+            .ul 
+                .li.footer-txt  Home
+                .li.footer-txt  Contact us 
+                .li.footer-txt  Log in
+        .col-3
 script(src='css/bootstrap/js/bootstrap.bundle.js')

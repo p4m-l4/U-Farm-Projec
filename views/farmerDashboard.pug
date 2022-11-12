@@ -7,36 +7,35 @@ head
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous')
     link(rel='stylesheet' href='../css/urban.css')
     title Farmer One Dashboard
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+nav.navbar
     .container-fluid
-        a.navbar-brand(action='/') Urban Farming Initiative
+        a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
-        #navbarSupportedContent.collapse.navbar-collapse
-            ul.navbar-nav.me-auto.mb-2.mb-lg-0
-                li.nav-item
-                    a.nav-link.active(aria-current='page' action='/') Home
-                li.nav-item
-                    a.nav-link(href='#') Link
-                li.nav-item.dropdown
-                    a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-                        | Account
-                    ul.dropdown-menu
-                        li
-                            a.dropdown-item(action='/') Login
-                        li
-                            a.dropdown-item(action='/') Sign Up
+        
 .container-fluid
     .col-4.container3
         .row
-            a.btn.dashBtn(action='/') Register Urban Farmer
+            a.btn.dashBtn(href='/register/registerurbanfarmer') Register Urban Farmer
         .row
-            a.btn.dashBtn(action='/') Data dashboard
+            a.btn.dashBtn(href='/dashboard/farmerdashboard') Data dashboard
         .row
-            a.btn.dashBtn(action='/') Maps
+            a.btn.dashBtn(href='/dashboard/farmerdashboard') Maps
         br.break
         .row
-            a.btn.dashBtn.logout(action='/') Log out
+            a.btn.dashBtn.logout(href='/') Log out
 .col-6.container-fluid
 #footer.container-fluid
+    .row.foot
+        .col-4
+            p.footer-txt A network by the farmers for the farmers! Join the ever expanding U-Farm network today.
+            .br
+        .col-5
+            p.footer-txt  Not a farmer? Browse the different products on display and find farmers near you.
+            .br
+            .ul 
+                .li.footer-txt  Home
+                .li.footer-txt  Contact us 
+                .li.footer-txt  Log in
+        .col-3
 script(src='css/bootstrap/js/bootstrap.bundle.js')

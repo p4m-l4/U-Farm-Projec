@@ -7,8 +7,7 @@ head
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
     link(rel='stylesheet' href='../css/urban.css')
     title Urban Farming Initiative
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-    .container-fluid
+nav.navbar
         a.navbar-brand(href='/' name='role') Urban Farming Initiative
 form.selection
     container-fluid
@@ -16,11 +15,24 @@ form.selection
         row.role
             a.role(href='/user/signIn') Shopper
             br
-            a.role(href='/user/signIn') Urban Farmer
+            a.role(href='/user/urban') Urban Farmer
             br
             a.role(href='/user/farmer') Farmer One
             br
-            a.role(href='/user/farmer') Agricultural Officer
+            a.role(href='/user/officer') Agricultural Officer
 // Footer
 #footer.container-fluid
+    .row.foot
+        .col-4
+            p.footer-txt A network by the farmers for the farmers! Join the ever expanding U-Farm network today.
+            .br
+        .col-5
+            p.footer-txt  Not a farmer? Browse the different products on display and find farmers near you.
+            .br
+            .ul 
+                .li.footer-txt  Home
+                .li.footer-txt  Contact us 
+                .li.footer-txt  Log in
+        .col-3
 script(src='css/bootstrap/js/bootstrap.bundle.js')
+script(src='./app.js')

@@ -7,18 +7,24 @@ head
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
     link(rel='stylesheet' href='../css/urban.css')
     title Urban Farming Initiative
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+nav.navbar
     .container-fluid
         a.navbar-brand(action='/') Urban Farming Initiative
 img.home-image(src='https://media.istockphoto.com/photos/farmer-in-the-field-picture-id1334408594?b=1&k=20&m=1334408594&s=170667a&w=0&h=AClhXT_NpC1tJO7oze5Y08WaGwKO5MRJtF6mRbuJjVI=')
 div
-    a.btn.signIn(href='/role' name='role') Join our network!
+.row
+    .col-4
+    .col-2
+        a.btn.btn-primary.signIn(href='/role' name='role') Join our network!
+    .col-2
+        a.btn.btn-primary.signIn(href='/role' name='role') Sign in
+    .col-4
 #cards.row.py-3.m-5
     .col-3
         .row
             .col-12
                 .card.market-image
-                    img.card-img-top(src='..//images/img2.jpg' alt='...')
+                    img.card-img-top.img-home(src='..//images/img2.jpg' alt='...')
                     .card-body
                         h5.card-title Consumers
                         .br What&apos;s on the market
@@ -31,7 +37,7 @@ div
             .col-12
                 .card.market-image
                     // <img src="..//images/img5.jpg" class="card-img-top" alt="..."/>
-                    img.card-img-top(src='https://d2v9ipibika81v.cloudfront.net/uploads/sites/42/Topista-Tukahirwa-31-planted-almost-9-acres-of-maize-in-her-garden.-She-said-the-hybrid-grains-when-planted-yield-bigger-and-heavier-corn--1140x684.jpg' alt='...')
+                    img.card-img-top.img-home(src='https://d2v9ipibika81v.cloudfront.net/uploads/sites/42/Topista-Tukahirwa-31-planted-almost-9-acres-of-maize-in-her-garden.-She-said-the-hybrid-grains-when-planted-yield-bigger-and-heavier-corn--1140x684.jpg' alt='...')
                     .card-body
                         h5.card-title Farmers
                         .br Sell your produce
@@ -44,7 +50,7 @@ div
             .col-12
                 .card.market-image
                     // <img src="..//images/img5.jpg" class="card-img-top" alt="..."/>
-                    img.card-img-top(src='https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YWdyaWN1bHR1cmV8ZW58MHx8MHx8&w=1000&q=80' alt='...')
+                    img.card-img-top.img-home(src='https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YWdyaWN1bHR1cmV8ZW58MHx8MHx8&w=1000&q=80' alt='...')
                     .card-body
                         h5.card-title Urban Farmers
                         .br Grow the farmers' network
@@ -56,7 +62,7 @@ div
         .row
             .col-12
                 .card.market-image
-                    img.card-img-top(src='..//images/img6.jpg' alt='...')
+                    img.card-img-top.img-home(src='..//images/img6.jpg' alt='...')
                     .card-body
                         h5.card-title Monitor and advise
                         p.card-text
@@ -66,4 +72,16 @@ div
 .clear1
 // Footer
 #footer.container-fluid
+    .row.foot
+        .col-4
+            p.footer-txt A network by the farmers for the farmers! Join the ever expanding U-Farm network today.
+            .br
+        .col-5
+            p.footer-txt  Not a farmer? Browse the different products on display and find farmers near you.
+            .br
+            .ul 
+                .li.footer-txt  Home
+                .li.footer-txt  Contact us 
+                .li.footer-txt  Log in
+        .col-3
 script(src='css/bootstrap/js/bootstrap.bundle.js')

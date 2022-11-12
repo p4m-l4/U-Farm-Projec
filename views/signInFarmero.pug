@@ -12,13 +12,12 @@ nav.navbar
         a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
-        
 .row.signinNav
     .col-6
         .container4
             img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg')
     .col-6 
-        form.signinForm(action='/user/signIn' name='signIn' method='POST')
+        form.signinForm(action='/user/signInFarmero' name='signIn' method='post')
             #signIn.container-fluid(action='submit')
                 h3 Welcome to U-farm. Providing a product for all!
                 h7 Enter your username to access your account
@@ -29,11 +28,9 @@ nav.navbar
                     .col-4(name='password') Password:
                     input#input.col-6
                 .row
-                    a.btn.signIn(href='/dashboard/clientdashboard' style='margin-left: 400px') Sign In
+                    a.btn.signIn(href='/dashboard/farmerdashboard' style='margin-left: 400px') Sign In
                 .row
                     a.btn.signIn(href='/' style='margin-left: 400px') Forgot password?
-                .row
-                    a.btn(href='/user/registerGeneral') Don&apos;t have an account? Click here to register
 #footer.container-fluid
     .row.foot
         .col-4

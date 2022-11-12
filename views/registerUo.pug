@@ -9,23 +9,10 @@ head
     title Urban Farmer Registration Form
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
     .container-fluid
-        a.navbar-brand(href='index.html') Urban Farming Initiative
+        a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
-        #navbarSupportedContent.collapse.navbar-collapse
-            ul.navbar-nav.me-auto.mb-2.mb-lg-0
-                li.nav-item
-                    a.nav-link.active(aria-current='page' href='index.html') Home
-                li.nav-item
-                    a.nav-link(href='#') Link
-                li.nav-item.dropdown
-                    a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-                        | Account
-                    ul.dropdown-menu
-                        li
-                            a.dropdown-item(href='auth/login.html') Login
-                        li
-                            a.dropdown-item(href='auth/register.html') Sign Up
+        
 .container
     #regForm.form.registration(action='/register' name='register' method='POST')
         h3.heading Urban Farmer Registration Form
@@ -87,4 +74,16 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
                 input.text
         a.btn.btn-primary.card-button(href='farmeroDashboard.html') Register
 #footer.container-fluid
+    .row.foot
+        .col-4
+            p.footer-txt A network by the farmers for the farmers! Join the ever expanding U-Farm network today.
+            .br
+        .col-5
+            p.footer-txt  Not a farmer? Browse the different products on display and find farmers near you.
+            .br
+            .ul 
+                .li.footer-txt  Home
+                .li.footer-txt  Contact us 
+                .li.footer-txt  Log in
+        .col-3
 script(src='css/bootstrap/js/bootstrap.bundle.js')

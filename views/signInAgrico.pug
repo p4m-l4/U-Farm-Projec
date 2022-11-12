@@ -4,32 +4,34 @@ head
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     // CSS only
-    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
     link(rel='stylesheet' href='../css/urban.css')
-    title Urban Farmer Dashboard
+    title Sign In
 nav.navbar
     .container-fluid
         a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
-.container-fluid
-    .row
-        .col-4.container3
-            .row
-                a.btn.dashBtn(href='/produce/upload') Post New Products
-            .row
-                a.btn.dashBtn(href='/dashboard/urbandashboard') Data dashboard
-            .row
-                a.btn.dashBtn(href='/dashboard/urbandashboard') Maps
-            br.break
-            .row
-                a.btn.dashBtn.logout(href='/') Log out
-        .col-8
-            .container-fluid
-                .th Current produce
-                .tr 
 
-.col-6.container-fluid
+.row.signinNav
+    .col-6
+        .container4
+            img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg')
+    .col-6 
+        form.signinForm(action='/user/signIn' name='signIn' method='POST')
+            #signIn.container-fluid(action='submit')
+                h3 Welcome to U-farm. Providing a product for all!
+                h7 Enter your username to access your account
+                .row
+                    .col-4(name='username') Username:
+                    input#input.col-6
+                .row
+                    .col-4(name='password') Password:
+                    input#input.col-6
+                .row
+                    a.btn.signIn(href='/dashboard/agricDashboard' style='margin-left: 400px') Sign In
+                .row
+                    a.btn.signIn(href='/' style='margin-left: 400px') Forgot password?
 #footer.container-fluid
     .row.foot
         .col-4

@@ -7,91 +7,93 @@ head
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous')
     link(rel='stylesheet' href='../css/urban.css')
     title Agric Officer Registration Form
-nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+nav.navbar
     .container-fluid
         a.navbar-brand(action='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
-        #navbarSupportedContent.collapse.navbar-collapse
-            ul.navbar-nav.me-auto.mb-2.mb-lg-0
-                li.nav-item
-                    a.nav-link.active(aria-current='page' action='/') Home
-                li.nav-item
-                    a.nav-link(action='/') Link
-                li.nav-item.dropdown
-                    a.nav-link.dropdown-toggle(action='/' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-                        | Account
-                    ul.dropdown-menu
-                        li
-                            a.dropdown-item(action='/') Login
-                        li
-                            a.dropdown-item(action='/') Sign Up
+        
 .container
     form(action='/user/registeragricofficer' method='post')
         h3.heading Farmer One Registration Form
         .row
-            #cell.col
-                label First name
+            #cell.col.input-control
+                label(for="firstName") First name
+                .error
                 br
                 input(type="text" name='firstName')
-            #cell.col
-                label  Last name
+            #cell.col.input-control
+                label(for="lastName") Last name
+                .error
                 br
                 input(type="text" name='lastName')
-            #cell.col
-                label Gender
+            #cell.col.input-control
+                label(for="gender") Gender
+                .error
                 br
                 input(type='text' name='gender')
             #cell.col
-                label Date of Birth
+                label(for="birthDate") Date of Birth
+                .error
                 br
                 input(type='date' name='birthDate')  
         .row
-            #cell.col
-                label  Phone Number
+            #cell.col.input-control
+                label(for="phoneNumber") Phone Number
+                .error
                 br
                 input(type='number' name='phoneNumber')
-            #cell.col
-                label  Enter National ID number
+            #cell.col.input-control
+                label(for="NIN") Enter National ID number
+                .error
                 br
                 input(type='text' name='NIN')
-            .col
-                label  Unique Farmer One ID
+            .col.input-control
+                label(for="userID") Unique Farmer One ID
+                .error
                 br
                 input(type='text' name='userID')
-            .col
-                label  Date of registration
+            .col.input-control
+                label(for="registrationDate") Date of registration
+                .error
                 br
                 input(type='date' name='registrationDate')
         .row
-            .col
-                label  Activities involved in
+            .col.input-control
+                label(for="activities")  Activities involved in
+                .error
                 br
                 input(type='text' name='activities')
-            .col
-                label  Select ward
+            .col.input-control
+                label(for="ward") Select ward
+                .error
                 br
                 input(type='text' name='ward')
-            .col
-                label  Duration of stay in ward
+            .col.input-control
+                label(for="wardDuration") Duration of stay in ward
+                .error
                 br
                 input(type='number' name='wardDuration')
-            .col
-                label  Residence type
+            .col.input-control
+                label(for="residence") Residence type
+                .error
                 br
                 input(type='text' name='residence')
         .row
-            .col
-                label  Password
+            .col.input-control
+                label(for="password") Password
+                .error
                 br
                 input(type='text' name='password')
-            .col
-                label  Confirm Password
+            .col.input-control
+                label(for="confirmpassword") Confirm Password
+                .error
                 br
                 input(type="text" name='confirmpassword')
         .row
-            .col
-                label  Directions to home
+            .col.input-control
+                label(for="directionsHome") Directions to home
+                .error
                 br
                 input.text(type='text' name='directionsHome')
             
@@ -99,4 +101,17 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
 
 
 #footer.container-fluid
+    .row.foot
+        .col-4
+            p.footer-txt A network by the farmers for the farmers! Join the ever expanding U-Farm network today.
+            .br
+        .col-5
+            p.footer-txt  Not a farmer? Browse the different products on display and find farmers near you.
+            .br
+            .ul 
+                .li.footer-txt  Home
+                .li.footer-txt  Contact us 
+                .li.footer-txt  Log in
+        .col-3
+script(src='app.js')
 script(src='css/bootstrap/js/bootstrap.bundle.js')

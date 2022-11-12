@@ -11,12 +11,19 @@ router.post('/registeragricofficer', async (req, res) => {
     console.log(req.body);
     try {
         const user = new User(req.body);
-        await User.register(user, req.body.password,(error) => {
+
+        let uniqueID = await User.findOne({userID: req.body.userID});
+        if (uniqueID) {
+            return res.status(400).send("This ID is already in use.")
+        } else {
+            await User.register(user, req.body.password,(error) => {
             if (error) {
                 throw error
             }
-            res.redirect("/dashboard/agricDashboard")
+            res.redirect("/role")
         });
+        }
+        
     } catch (error) {
         res.status(400).send('Registration failed');
         console.log(error)
@@ -26,33 +33,107 @@ router.post('/registeragricofficer', async (req, res) => {
 router.get("/registerurbanfarmer", (req, res) => {
 	res.render("registerUo");
 });
-router.post("/registerurbanfarmer", (req, res) => {
+router.post("/registerurbanfarmer", async (req, res) => {
 	console.log(req.body);
-	res.send("Registration successful!");
+	try {
+        const user = new User(req.body);
+
+        let uniqueID = await User.findOne({userID: req.body.userID});
+        let uniqueNIN = await User.findOne({uniqueNIN: req.body.NIN});
+        if (uniqueID) {
+            return res.status(400).send("This ID is already in use.")
+        } else if (uniqueNIN) {
+            return res.status(400).send("This National ID number is already in use.")
+        } else {
+            await User.register(user, req.body.password,(error) => {
+            if (error) {
+                throw error
+            }
+            res.redirect("/dashboard/farmerdashboard")
+        });
+        }
+        
+    } catch (error) {
+        res.status(400).send('Registration failed');
+        console.log(error)
+    }
 });
 
 router.get("/registerGeneral", (req, res) => {
 	res.render("registerGeneral");
 });
-router.post("/registerGeneral", (req, res) => {
+router.post("/registerGeneral", async (req, res) => {
 	console.log(req.body);
-	res.send("Registration successful!");
+	try {
+		const user = new User(req.body);
+
+		let uniqueID = await User.findOne({ userID: req.body.userID });
+		let uniqueNIN = await User.findOne({ uniqueNIN: req.body.NIN });
+		if (uniqueID) {
+			return res.status(400).send("This ID is already in use.");
+		} else if (uniqueNIN) {
+			return res.status(400).send("This National ID number is already in use.");
+		} else {
+			await User.register(user, req.body.password, (error) => {
+				if (error) {
+					throw error;
+				}
+				res.redirect("/role");
+			});
+		}
+	} catch (error) {
+		res.status(400).send("Registration failed");
+		console.log(error);
+	}
 });
 
 router.get("/registerfarmerone", (req, res) => {
 	res.render("registerfo");
 });
-router.post("/registerfarmerone", (req, res) => {
+router.post("/registerfarmerone", async (req, res) => {
 	console.log(req.body);
-	res.send("Registration successful!");
+	try {
+        const user = new User(req.body);
+
+        let uniqueID = await User.findOne({userID: req.body.userID});
+        let uniqueNIN = await User.findOne({uniqueNIN: req.body.NIN});
+        if (uniqueID) {
+            return res.status(400).send("This ID is already in use.")
+        } else if (uniqueNIN) {
+            return res.status(400).send("This National ID number is already in use.")
+        } else {
+            await User.register(user, req.body.password,(error) => {
+            if (error) {
+                throw error
+            }
+            res.redirect("/dashboard/agricdashboard")
+        });
+        }
+        
+    } catch (error) {
+        res.status(400).send('Registration failed');
+        console.log(error)
+    }
 });
+
+// router.get("/signIn", (req, res) => {
+// 	res.render("signIn");
+// });
 
 router.get("/signIn", (req, res) => {
 	res.render("signIn");
 });
 
 router.get("/farmer", (req, res) => {
-	res.render("farmeroSignin");
+	res.render("signInFarmero");
+});
+
+router.get("/urban", (req, res) => {
+	res.render("signInUrban");
+});
+
+router.get("/officer", (req, res) => {
+	res.render("signInAgrico");
 });
 
 
