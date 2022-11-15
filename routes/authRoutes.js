@@ -1,32 +1,37 @@
 const express = require("express");
 const router = express.Router();
-const passport = require('passport');
+const passport = require("passport");
 
-router.get("/signIn", (req, res) => {
-	res.render("signIn");
-});
-router.post("/signIn", passport.authenticate('local', { failureRedirect: "/"}), (req, res) => {
-    console.log(req.body),
-	res.redirect("signInUrban");
+router.get("/login", (req, res) => {
+	res.render("login");
 });
 
-router.get("/farmer", (req, res) => {
-	res.render("signInFarmero");
-});
+router.post(
+	"/login",
+	passport.authenticate("local", { failureRedirect: "/login/login" }),
+	(req, res) => {
+		console.log(req.body);
+		req.session.user = req.user;
+		const user = req.session.user;
+		console.log(user.role);
+		res.redirect("/dashboard/urbandashboard");
+	}
+);
 
-router.get("/urban", (req, res) => {
-	res.render("signInUrban");
-});
-
-router.post("/urban", passport.authenticate('local', { failureRedirect: "/urban"}), (req, res) => {
-	res.redirect("signInUrban");
-});
-
-
-router.get("/officer", (req, res) => {
-	res.render("signInAgrico");
-});
-
+router.post(
+	"/logout", (req, res) => {
+        if(req.session){
+            req.session.destroy(function(err){
+                if(err){
+                    res.status(400).send("Unable to logout at this time");
+                } else {
+                    return res.redirect('/login')
+                }
+            })
+        }
+		
+	}
+);
 
 
 module.exports = router;

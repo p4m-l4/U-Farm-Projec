@@ -13,7 +13,7 @@ nav.navbar
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
 .container-fluid
-    .row
+    .row.dashboard
         .col-4.container3
             .row
                 a.btn.dashBtn(href='/produce/upload') Post New Products
@@ -23,7 +23,8 @@ nav.navbar
                 a.btn.dashBtn(href='/dashboard/urbandashboard') Maps
             br.break
             .row
-                a.btn.dashBtn.logout(href='/') Log out
+            form(method='post' action='/logout')
+                button.btn.dashBtn.logout(type='submit') Log out
         .col-8
             .container-fluid
                 .th Current produce
