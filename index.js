@@ -21,6 +21,8 @@ const routesHome = require("./routes/indexRoute");
 const routesRegister = require("./routes/registerRoutes");
 const routesDashboard = require("./routes/dashboardRoutes");
 const routesProduce = require("./routes/productsRoute");
+const routesData = require("./routes/datadashboardRoutes");
+const routesLogIn = require('./routes/authRoutes');
 
 //Instantiation
 const app = express();
@@ -64,6 +66,8 @@ app.use("/", routesHome);
 app.use("/user", routesRegister);
 app.use("/dashboard", routesDashboard);
 app.use("/produce", routesProduce);
+app.use("/data", routesData);
+app.use("/login", routesLogIn);
 
 //Invalid route handling
 app.get('*', (req, res) => {

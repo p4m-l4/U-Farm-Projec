@@ -47,44 +47,51 @@ nav.navbar
                         label(name='NIN') Enter National ID number
                         br
                         input(type="text" name='NIN')
-                    .col
+                    #cell.col
                         label(name='userID') Unique Farmer One ID
                         br
                         input(type="text" name='userID')
-                    .col
+                    #cell.col
                         label(name='registrationDate') Date of registration
                         br
                         input(type="date" name='registrationDate')
                 .row
-                    .col
+                    #cell.col
                         label(name='activities') Activities involved in
                         br
                         input(type="text" name='activities')
-                    .col
+                    #cell.col
                         label(name='ward') Select ward
                         br
                         input(type="text" name='ward')
-                    .col
+                    #cell.col
                         label(name='wardDuration') Duration of stay in ward
                         br
                         input(type="text" name='wardDuration')
-                    .col
+                    #cell.col
                         label(name='residence') Residence type
                         br
                         input(type="text" name='residence')
                 .row
-                    .col.input-control
+                    #cell.col
+                        label Role
+                        br
+                        select.form-select(aria-label='Default select example' name='role' type='text')
+                            option(selected='') Select one
+                            option(value='farmerone') Farmer One
+                            
+                    #cell.col
                         label(for="password") Password
                         .error
                         br
                         input(type='text' name='password')
-                    .col.input-control
+                    #cell.col.input-control
                         label(for="confirmpassword") Confirm Password
                         .error
                         br
                         input(type="text" name='confirmpassword')
                 .row
-                    .col
+                    #cell.col
                         label(name='directionsHome') Directions to home
                         br
                         input.text(type="text" name='directionsHome')

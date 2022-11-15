@@ -75,6 +75,11 @@ const userSchema = new mongoose.Schema({
 		required: false,
 		trim: true,
 	},
+	role: {
+		type: String,
+		required: false,
+		trim: true,
+	}
 });
 
 userSchema.plugin(passportLocalMongoose, {

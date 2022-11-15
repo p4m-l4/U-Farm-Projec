@@ -50,7 +50,13 @@ nav.navbar
                         br
                         input(type="number" name='phoneNumber')
                 .row
-                    .col
+                    #cell.col
+                        label Role
+                        br
+                        select.form-select(aria-label='Default select example' name='role' type='text')
+                            option(selected='') Select one
+                            option(value='generalusers')  General users
+                    #cell.col
                         label(for='location') Location / District
                         br
                         input(type="text" name='location')

@@ -17,18 +17,18 @@ nav.navbar
         .container4
             img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg')
     .col-6 
-        form.signinForm(action='/user/signInUrban' name='signIn' method='POST')
+        form.signinForm(action='/login/signInUrban' name='signIn' method='POST')
             #signIn.container-fluid(action='submit')
                 h3 Welcome to U-farm. Providing a product for all!
                 h7 Enter your username to access your account
                 .row
-                    .col-4(name='username') Username:
+                    .col-4(name='username' alt='Unique Number ID') Username:
                     input#input.col-6
                 .row
                     .col-4(name='password') Password:
                     input#input.col-6
                 .row
-                    a.btn.signIn(href='/dashboard/urbandashboard' style='margin-left: 400px') Sign In
+                    input.btn.signIn(type='submit' value='Sign In' style='margin-left: 400px')
                 .row
                     a.btn.signIn(href='/' style='margin-left: 400px') Forgot password?
 #footer.container-fluid

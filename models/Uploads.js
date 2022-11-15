@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const passportLocalMongoose = require('passport-local-mongoose');
 
-const userSchema = new mongoose.Schema({
+const uploadSchema = new mongoose.Schema({
 	userID: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
@@ -11,7 +10,6 @@ const userSchema = new mongoose.Schema({
 	productImage: {
 		type: String,
 		required: false,
-		trim: true,
 	},
 	productName: {
 		type: String,
@@ -32,10 +30,12 @@ const userSchema = new mongoose.Schema({
 		required: false,
 		trim: true,
 	},
+	status: {
+		type:String,
+		default: "Pending",
+		enum: ["Pending", "Approved"]
+	}
 });
 
-userSchema.plugin(passportLocalMongoose, {
-	usernameField: "userID",
-});
-module.exports = mongoose.model('ProductUploads', uploadSchema);
+module.exports = mongoose.model('ProductUpload', uploadSchema);
 

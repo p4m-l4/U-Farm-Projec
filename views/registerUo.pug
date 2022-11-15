@@ -42,11 +42,11 @@ nav.navbar
                     label(for='phoneNumber') Phone Number
                     br
                     input(type="number" name='phoneNumber')
-            .row
                 #cell.col
                     label(for='NIN') Enter National ID number
                     br
                     input(type="text" name='NIN')
+            .row
                 #cell.col
                     label(for='userID') Unique Urban Farmer ID
                     br
@@ -55,11 +55,17 @@ nav.navbar
                     label(for='activities') Activities involved in
                     br
                     input(type="text" name='activities')
-            .row 
                 #cell.col
                     label(name='ward') Select ward
                     br
                     input(type="text" name='ward')
+            .row 
+                #cell.col
+                    label Role
+                    br
+                    select.form-select(aria-label='Default select example' name='role' type='text')
+                        option(selected='') Select one
+                        option(value='urbanfarmer') Urban farmer
                 #cell.col
                     label(name='wardDuration') Duration of stay in ward
                     br

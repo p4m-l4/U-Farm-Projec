@@ -10,17 +10,20 @@ head
 nav.navbar
     .container-fluid
         a.navbar-brand(href='/') Urban Farming Initiative
-form.form.container4(action='/upload' name='uploadForm' method='post')
+form.form.container4(action='/upload' name='uploadForm' method='post' enctype="multipart/form-data")
     h3.heading Produce Upload Form
     .row
         #cell.col-4
             label Farmer ID
                 br
-                input.input(type="text" name='userID')
+                select.input(type="text" name='userID')
+                    each urbanFarmer in urbanFarmers
+                        option(value= urbanFarmer._id) #{urbanFarmer.firstName +" "+urbanFarmer.lastName}
         #cell.col-4
-            label Upload image
-            br
-            input.input(type="text" name='productImage' alt='Select file')
+            label.input-group-text(for='productImage') Upload Image    
+            input#inputGroupFile02.form-control(type='file' name='productImage')
+                
+
         #cell.col-4
             label Product name
             br
