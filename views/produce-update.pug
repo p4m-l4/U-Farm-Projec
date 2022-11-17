@@ -1,0 +1,89 @@
+doctype html
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // CSS only
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
+    link(rel='stylesheet' href='../css/urban.css')
+    title Urban Farming Initiative
+nav.navbar
+    .container-fluid
+        a.navbar-brand(href='/') Urban Farming Initiative
+form.form.container4(action='/produce/update?id='+product._id name='uploadForm' method='POST')
+    h3.heading.register-heading Produce Update Form
+    .row
+        
+        #cell.col-4
+            label.label Product name
+                br
+                input.form-control(type="text" name='productName')
+    .row
+        #cell.col-4
+            label.label Product type
+                br
+                select.form-select(aria-label='Default select example' name='productType' type='text')
+                    option(selected='') Select one
+                    option(value='Organic' selected = product.productType === "Organic") Organic
+                    option(value='Non-organic'selected = product.productType === "Non-organic") Non-organic
+        #cell.col-4
+            label.label Date of upload
+                br
+                input.form-control(type='date' name='uploadDate' value = product.uploadDate)
+        
+    .row
+        #cell.col-4
+            label.label Product sub-group
+                br
+                select.form-select(aria-label='Default select example' name='productGroup' type='text')
+                    option(selected='') Select one
+                    option(value='Dairy' selected = product.productGroup === "Dairy") Dairy products
+                    option(value='Cereal/grain' selected = product.productGroup === "Cereal/grain") Cereal/Grain products
+                    option(value='Butcher/meats' selected = product.productGroup === "Butcher/meats") Butcher/ meats
+                    option(value='Fruits' selected = product.productGroup === "Fruits") Fruits
+                    option(value='Vegetables' selected = product.productGroup === "Vegetables") Vegetables
+                    option(value='Oils' selected = product.productGroup === "Oils") Oils
+                    option(value='Spices' selected = product.productGroup === "Spices") Spices
+                    option(value='Other products' selected = product.productGroup === "Other products") Other products
+        #cell.col-4
+            label.label Unit cost (UGX)
+                br
+                input.form-control(type='number' name='unitCost' value = product.unitCost)
+        
+    .row
+            label.label Residential Ward
+                br
+                select.form-select(aria-label='Default select example' name='ward' type='text')
+                    if currentUser
+                            option(value= currentUser._id) #{currentUser.ward}
+        #cell.col-4
+            label.label Mode of delivery
+                br
+                select.form-select(aria-label='Default select example' name='delivery' type='text')
+                    option(selected='') Select one
+                    option(value='pick up' selected = product.delivery === "pick up") Pick up
+                    option(value='delivery' selected = product.delivery === "delivery") Home delivery
+        
+        #cell.row
+            .mb-3
+                label.form-label.label(for='exampleFormControlTextarea1' value = product.exampleFormControlTextarea1) Directions for pick up
+                    textarea#exampleFormControlTextarea1.form-control.text(rows='3' type='text' name='deliveryDirections')
+    .row
+        button.btn.btn-primary.card-button(type='submit') Upload
+
+.col-6.container-fluid
+#footer.container-fluid
+    .row.foot
+        .col-4
+            p.footer-txt A network by the farmers for the farmers! Join the ever expanding U-Farm network today.
+            .br
+        .col-5
+            p.footer-txt  Not a farmer? Browse the different products on display and find farmers near you.
+            .br
+            .ul 
+                .li.footer-txt  Home
+                .li.footer-txt  Contact us 
+                .li.footer-txt  Log in
+        .col-3
+script(src='../app.js')
+script(src='css/bootstrap/js/bootstrap.bundle.js')

@@ -27,8 +27,8 @@ const uploadSchema = new mongoose.Schema({
 	},
 	status: {
 		type: String,
-		// default: "Pending",
-		// enum: ["Pending", "Approved"],
+		default: "Pending",
+		enum: ["Pending", "Approved"],
 	},
 	productName: {
 		type: String,

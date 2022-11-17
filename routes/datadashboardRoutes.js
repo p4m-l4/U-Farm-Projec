@@ -21,7 +21,7 @@ router.get("/farmerdatadashboard", async (req, res) => {
 		console.log(error);
 	}
 });
-    router.get("/urbandatadashboard", async (req, res) => {
+router.get("/urbandatadashboard", async (req, res) => {
 	try {
 		let items = await User.find({ role: "urbanFarmer" });
 		res.render("datadashboardUrban", { farmerones: items });
