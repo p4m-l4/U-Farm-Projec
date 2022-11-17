@@ -19,55 +19,65 @@ nav.navbar
             img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg')
     .col-6 
         form.signinForm.form(action='/user/registerGeneral' name='registerGeneral' method='post')
-            h3.heading
+            h3.heading.register-heading
                 | Shop with us. 
                 br
                 |  A product for everyone!
                 .row
                     #cell.col
-                        label(for='firstName') First name
+                        label.label(for='firstName') First name
                         br
-                        input(type="text" name='firstName')
+                        input.form-control(type="text" name='firstName')
                     #cell.col
-                        label(for='lastName') Last name
+                        label.label(for='lastName') Last name
                         br
-                        input(type="text" name='lastName')
-                    #cell.col
-                        label(for='gender') Gender
-                        br
-                        input(type="text" name='gender')
+                        input.form-control(type="text" name='lastName')
                 .row
                     #cell.col
-                        label(for='birthDate') Date of Birth
+                        label.label(name='gender') Gender
                         br
-                        input(type="date" name='birthDate')
+                        select.form-select(aria-label='Default select example' name='gender' type='text')
+                            option(selected='') Select one
+                            option(value='male')  Male
+                            option(value='female')  Female
                     #cell.col
-                        label(for='email') Email
+                        label.label(for='birthDate') Date of Birth
                         br
-                        input(type="text" name='userID')
-                    #cell.col
-                        label(for='phoneNumber') Phone Number
-                        br
-                        input(type="number" name='phoneNumber')
+                        input.form-control(type="date" name='birthDate')
                 .row
                     #cell.col
-                        label Role
+                        label.label(for='email') Email
+                        br
+                        input.form-control(type="text" name='userID')
+                    #cell.col
+                        label.label(for='phoneNumber') Phone Number
+                        br
+                        input.form-control(type="number" name='phoneNumber')
+                .row
+                    #cell.col
+                        label.label Role
                         br
                         select.form-select(aria-label='Default select example' name='role' type='text')
                             option(selected='') Select one
                             option(value='generalusers')  General users
                     #cell.col
-                        label(for='location') Location / District
+                        label.label(for='location') Location / District
                         br
-                        input(type="text" name='location')
+                        select.form-select(aria-label='Default select example' name='location' type='text')
+                            option(selected='') Select one
+                            option(value='ward1')  Masajja Division - Ward 1
+                            option(value='ward2')  Masajja Division - Ward 2
+                            option(value='ward3')  Masajja Division - Ward 3
+                            option(value='ward4')  Masajja Division - Ward 4
+                .row
                     #cell.col
-                        label(for='password') Password
+                        label.label(for='password') Password
                         br
-                        input(type="text" name='password')
+                        input.form-control(type="text" name='password')
                     #cell.col
-                        label(ofor='confirmpassword') Confirm Password
+                        label.label(for='confirmpassword') Confirm Password
                         br
-                        input(type="text" name='confirmpassword')
+                        input.form-control(type="text" name='confirmpassword')
 
                 .row
                 button.btn.btn-primary.card-button(type='submit') Register

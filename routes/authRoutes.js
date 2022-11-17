@@ -6,6 +6,7 @@ router.get("/login", (req, res) => {
 	res.render("login");
 });
 
+//Login route
 router.post(
 	"/login",
 	passport.authenticate("local", { failureRedirect: "/login/login" }),
@@ -18,6 +19,7 @@ router.post(
 	}
 );
 
+//logout route
 router.post(
 	"/logout", (req, res) => {
         if(req.session){
@@ -25,7 +27,7 @@ router.post(
                 if(err){
                     res.status(400).send("Unable to logout at this time");
                 } else {
-                    return res.redirect('/login')
+                    return res.redirect('/login/login')
                 }
             })
         }

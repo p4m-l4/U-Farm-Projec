@@ -25,7 +25,7 @@ router.get('/upload', async (req, res) => {
     res.render('uploadProduce', {urbanFarmers: urbanFarmerList});
 });
 
-router.post('/upload', upload.single('productImage'), async (req, res) => {
+router.post('/produce/upload', upload.single('productImage'), async (req, res) => {
     console.log(req.body);
     try {
         const produce = new ProductUpload(req.body);

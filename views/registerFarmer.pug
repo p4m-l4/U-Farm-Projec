@@ -17,84 +17,113 @@ nav.navbar
     .col-6
         .container4
             img#imgPic(src='https://knnindia.co.in/uploads/newsfiles/Agri-30-10-20220.jpg')
-    .col-6 
+    .col-6.register-form 
         form.form(action='/user/registerFarmer' name='register' method='post')
-            h3.heading Farmer One Registration Form
+            h3.heading.register-heading Farmer One Registration Form
                 .row
                     #cell.col.input-control
-                        label(for="firstName") First name
+                        label.label(for="firstName") First name
                             .error
                         br
-                        input(type="text" name='firstName')
+                        input.form-control(type="text" name='firstName')
                     #cell.col
-                        label(name='lastName') Last name
+                        label.label(name='lastName') Last name
+                            .error
                         br
-                        input(type="text" name='lastName')
+                        input.form-control(type="text" name='lastName')
                     #cell.col
-                        label(name='gender') Gender
+                        label.label(name='gender') Gender
+                            .error
                         br
-                        input(type="text" name='gender')
-                    #cell.col
-                        label(name='birthDate') Date of Birth
-                        br
-                        input(type="date" name='birthDate')
+                        select.form-select(aria-label='Default select example' name='gender' type='text')
+                            option(selected='') Select one
+                            option(value='male')  Male
+                            option(value='female')  Female
                 .row
                     #cell.col
-                        label(name='phoneNumber') Phone Number
+                        label.label(name='birthDate') Date of Birth
+                            .error
                         br
-                        input(type="number" name='phoneNumber')
+                        input.form-control(type="date" name='birthDate')
                     #cell.col
-                        label(name='NIN') Enter National ID number
+                        label.label(name='phoneNumber') Phone Number
+                            .error
                         br
-                        input(type="text" name='NIN')
+                        input.form-control(type="number" name='phoneNumber')
                     #cell.col
-                        label(name='userID') Unique Farmer One ID
+                        label.label(name='NIN') Enter National ID number
+                            .error
                         br
-                        input(type="text" name='userID')
-                    #cell.col
-                        label(name='registrationDate') Date of registration
-                        br
-                        input(type="date" name='registrationDate')
+                        input.form-control(type="text" name='NIN')
                 .row
                     #cell.col
-                        label(name='activities') Activities involved in
+                        label.label(name='userID') Unique Farmer One ID
+                            .error
                         br
-                        input(type="text" name='activities')
+                        input.form-control(type="text" name='userID')
                     #cell.col
-                        label(name='ward') Select ward
+                        label.label(name='registrationDate') Date of registration
+                            .error
                         br
-                        input(type="text" name='ward')
+                        input.form-control(type="date" name='registrationDate')
                     #cell.col
-                        label(name='wardDuration') Duration of stay in ward
+                        label.label(name='activities') Activities involved in
+                            .error
                         br
-                        input(type="text" name='wardDuration')
-                    #cell.col
-                        label(name='residence') Residence type
-                        br
-                        input(type="text" name='residence')
+                        select.form-select(aria-label='Default select example' name='activities' type='text')
+                            option(selected='') Select one
+                            option(value='horticulture')  Horticulture
+                            option(value='poultry')  Poultry
+                            option(value='dairy')  Dairy products
                 .row
                     #cell.col
-                        label Role
+                        label.label(name='ward') Select ward
+                            .error
+                        br
+                        select.form-select(aria-label='Default select example' name='ward' type='text')
+                            option(selected='') Select one
+                            option(value='ward1')  Masajja Division - Ward 1
+                            option(value='ward2')  Masajja Division - Ward 2
+                            option(value='ward3')  Masajja Division - Ward 3
+                            option(value='ward4')  Masajja Division - Ward 4
+                    #cell.col
+                        label.label(name='wardDuration') Duration of stay in ward
+                            .error
+                        br
+                        input.form-control(type="number" name='wardDuration')
+                    #cell.col
+                        label.label(name='residence') Residence type
+                            .error
+                        br
+                        input.form-select(type="text" name='residence')
+                .row
+                    #cell.col
+                        label.label Role
+                            .error
                         br
                         select.form-select(aria-label='Default select example' name='role' type='text')
                             option(selected='') Select one
                             option(value='farmerone') Farmer One
                             
                     #cell.col
-                        label(for="password") Password
-                        .error
+                        label.label(for="password") Password
+                            .error
                         br
-                        input(type='text' name='password')
+                        input.form-control(type='text' name='password')
+                
                     #cell.col.input-control
-                        label(for="confirmpassword") Confirm Password
-                        .error
+                        label.label(for="confirmpassword") Confirm Password
+                            .error
                         br
-                        input(type="text" name='confirmpassword')
+                        input.form-control(type="text" name='confirmpassword')
                 .row
                     #cell.col
-                        label(name='directionsHome') Directions to home
+                        label.label(name='directionsHome') Directions to home
+                            .error
                         br
-                        input.text(type="text" name='directionsHome')
+                        textarea#exampleFormControlTextarea1.form-control.text(type="text" name='directionsHome')
+                
+                .row
                 button.btn.btn-primary.card-button(type='submit') Register
 
 #footer.container-fluid

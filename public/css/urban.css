@@ -36,6 +36,10 @@
     height: 120px;
 }
 
+.input{
+    border-radius: 500px;
+}
+
 /*Home page*/
 .home-image{
     width: 100%;
@@ -87,6 +91,14 @@
 .form {
     background-color: rgb(221, 221, 221);
     margin-bottom: 20vh;
+    padding-left: 0px;
+    width: 95vh;
+    height: 100vh;
+}
+
+.label{
+    font-size:22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #img{
@@ -202,11 +214,25 @@
 }
 .signinNav{
     padding: 0;
+    margin: 0;
     font-size: medium;
+}
+.register-heading{
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .signinForm{
     padding-top: 60px;
     padding-left: 2px;
+}
+.form-control{
+    width: 300px;
+}
+.form-select{
+    width: 300px;
+}
+.text{
+    width: 1000px;
 }
 
 /* client dashboard */
@@ -269,3 +295,4 @@
 .dashboard{
     padding: 0px;
 }
+
