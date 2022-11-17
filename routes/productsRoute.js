@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 //import multer to upload images
 const multer = require('multer');
+const connectEnsureLogin = require('connect-ensure-login');
 
 //Importing model
 const ProductUpload = require("../models/Uploads");
@@ -20,18 +21,23 @@ var storage = multer.diskStorage({
 //Instantiate variable upload to store multer functionality to upload images
 var upload = multer({ storage: storage })
 
-router.get('/upload', async (req, res) => {
-    let urbanFarmerList = await User.find({ role: 'urbanfarmer'});
-    res.render('uploadProduce', {urbanFarmers: urbanFarmerList});
+// router.get('/upload', async (req, res) => {
+//     let urbanFarmerList = await User.find({ role: 'urbanfarmer'});
+//     res.render('uploadProduce', {urbanFarmers: urbanFarmerList});
+// });
+
+router.get("/upload", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
+	
+	res.render("uploadProduce", { currentUser: req.session.user });
 });
 
-router.post('/produce/upload', upload.single('productImage'), async (req, res) => {
+router.post("/upload", connectEnsureLogin.ensureLoggedIn(), upload.single('productImage'), async (req, res) => {
     console.log(req.body);
     try {
         const produce = new ProductUpload(req.body);
         produce.productImage = req.file.path;
         await produce.save(); 
-            res.redirect('/');
+            res.redirect('/produce/upload');
         }
         catch (error) {
         res.status(400).send("Failed to upload produce")

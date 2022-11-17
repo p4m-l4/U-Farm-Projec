@@ -90,10 +90,9 @@
 /*Sign/registration in form*/
 .form {
     background-color: rgb(221, 221, 221);
-    margin-bottom: 20vh;
     padding-left: 0px;
     width: 95vh;
-    height: 100vh;
+    height: 850px;
 }
 
 .label{
