@@ -17,18 +17,55 @@ nav.navbar
         .col-4.container3
             .row
                 a.btn.dashBtn(href='/produce/upload') Post New Products
+            //- .row
+            //-     a.btn.dashBtn(href='/produce/products-list') View posted produce
             .row
                 a.btn.dashBtn(href='/data/urbandatadashboard') Data dashboard
-            .row
-                a.btn.dashBtn(href='/produce/products-list') Maps
             br.break
             .row
             form(method='post' action='/login/logout')
                 button.btn.dashBtn.logout(type='submit') Log out
         .col-8
             .container-fluid
-                .th Current produce
-                .tr 
+                nav
+                #nav-tab.nav.nav-tabs(role='tablist')
+                    a#nav-profile-tab.nav-item.nav-link(href='/registerFarmerOne') Register FarmerOne
+                #nav-tabContent.tab-content
+                br
+                table.table.table-bordered
+                    thead
+                        tr
+                            th Full Name
+                            th NIN Number
+                            th Gender
+                            th Phone number
+                            th Activities
+                            th Ward
+                            th Duration of stay in ward
+                            th Update
+                            th Delete
+                        tbody
+                            if farmerones.length
+                                each farmerone in farmerones
+                                    tr
+                                        td #{farmerone.firstName+" "+farmerone.lastName}
+                                        td #{farmerone.NIN}
+                                        td #{farmerone.gender}
+                                        td #{farmerone.phoneNumber}
+                                        td #{farmerone.activities}
+                                        td #{farmerone.ward}
+                                        td #{farmerone.wardDuration}
+                                        //- td #{moment(us
+                                        td
+                                            a
+                                                button.btn.btn-primary.btn-block(href='/farmerOne/update/'+farmerone._id) Update
+                                        td
+                                            form(method="post" action='/farmerOne/delete')
+                                                input(type="hidden" placeholder="" name="id", value=farmerone._id)
+                                                button.btn.btn-danger.btn-block(type="submit") Delete
+                div.form-row
+                    div.col.form-group
+                        a(class='button' href='/agricOfficerDash') Back
 
 .col-6.container-fluid
 #footer.container-fluid

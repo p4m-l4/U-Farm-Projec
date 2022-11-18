@@ -21,8 +21,16 @@ nav.navbar
         .row
             a.btn.dashBtn(action='/') Maps
         br.break
-        .row
-            a.btn.dashBtn.logout(type='submit' action='/') Log out
+            .row
+            form(method='post' action='/login/logout')
+                button.btn.dashBtn.logout(type='submit') Log out
+
+        .col-8
+            .container-fluid
+                .th Current produce
+                
+                .tr 
+                
 .col-6.container-fluid
 #footer.container-fluid
     .row.foot

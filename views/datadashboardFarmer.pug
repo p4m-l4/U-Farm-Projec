@@ -13,11 +13,11 @@ nav.navbar
         span.navbar-toggler-icon
 
 header.card-header 
-    h4.card-title List of Farmer ones 
+    h4.card-title List of Urban Farmers 
     br
     nav
     #nav-tab.nav.nav-tabs(role='tablist')
-        a#nav-profile-tab.nav-item.nav-link(href='/registerFarmer') Register FarmerOne
+        a#nav-profile-tab.nav-item.nav-link(href='/registerFarmer') Register Urban farmer
     #nav-tabContent.tab-content
     br
 table.table.table-bordered
@@ -33,23 +33,23 @@ table.table.table-bordered
             th Update
             th Delete
         tbody
-            if farmerones.length
-                each farmerone in farmerones
+            if urbanfarmers.length
+                each urbanfarmer in urbanfarmers
                     tr
-                        td #{farmerone.firstName+" "+farmerone.lastName}
-                        td #{farmerone.NIN}
-                        td #{farmerone.gender}
-                        td #{farmerone.phoneNumber}
-                        td #{farmerone.activities}
-                        td #{farmerone.ward}
-                        td #{farmerone.wardDuration}
+                        td #{urbanfarmer.firstName+" "+urbanfarmer.lastName}
+                        td #{urbanfarmer.NIN}
+                        td #{urbanfarmer.gender}
+                        td #{urbanfarmer.phoneNumber}
+                        td #{urbanfarmer.activities}
+                        td #{urbanfarmer.ward}
+                        td #{urbanfarmer.wardDuration}
                         //- td #{moment(us
                         td
                             a
-                                button.btn.btn-primary.btn-block(href='/farmerOne/update/'+farmerone._id) Update
+                                button.btn.btn-primary.btn-block(href='/farmerOne/update/'+urbanfarmer._id) Update
                         td
                             form(method="post" action='/farmerOne/delete')
-                                input(type="hidden" placeholder="" name="id", value=farmerone._id)
+                                input(type="hidden" placeholder="" name="id", value=urbanfarmer._id)
                                 button.btn.btn-danger.btn-block(type="submit") Delete
     div.form-row
         div.col.form-group
@@ -68,4 +68,4 @@ table.table.table-bordered
                 .li.footer-txt  Contact us 
                 .li.footer-txt  Log in
         .col-3
-            div.col-md-12 © 2022 Refactory Cohort 12, UFar by Namala Pamela
+        div.col-md-12 © 2022 Refactory Cohort 12, UFarm by Namala Pamela

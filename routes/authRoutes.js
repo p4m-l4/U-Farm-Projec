@@ -15,7 +15,17 @@ router.post(
 		req.session.user = req.user;
 		const user = req.session.user;
 		console.log(user.role);
-		res.redirect("/dashboard/urbandashboard");
+		if (req.user.role == "farmerone") {
+			res.redirect("/dashboard/farmerdashboard");
+		} else if (req.user.role == "urbanfarmer") {
+			res.redirect("/dashboard/urbandashboard");
+		} else if (req.user.role == "agriculturalofficer") {
+			res.redirect("/dashboard/agricdashboard");
+		} else if (req.user.role == "generalusers") {
+			res.redirect("/dashboard/clientdashboard")
+		} else {
+			res.send("You are not signed in")
+		}
 	}
 );
 

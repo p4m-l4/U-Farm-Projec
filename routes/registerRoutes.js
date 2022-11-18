@@ -20,7 +20,7 @@ router.post('/registeragricofficer', async (req, res) => {
             if (error) {
                 throw error
             }
-            res.redirect("/role")
+            res.redirect("/dashboard/farmerdashboard");
         });
         }
         
@@ -49,7 +49,7 @@ router.post("/registerurbanfarmer", async (req, res) => {
             if (error) {
                 throw error
             }
-            res.redirect("/role")
+            res.redirect("/dashboard/farmerdashboard");
         });
         }
         
@@ -100,7 +100,7 @@ router.post("/registerFarmer", async (req, res) => {
             if (error) {
                 throw error
             }
-            res.redirect("/role")
+            res.redirect("/dashboard/agricdashboard");
         });
         }
         

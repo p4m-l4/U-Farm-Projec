@@ -12,18 +12,26 @@ nav.navbar
         a.navbar-brand(href='/') Urban Farming Initiative
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
-        
+
 .container-fluid
-    .col-4.container3
-        .row.dashboard
+    .row.dashboard
+        .col-4.container3
             a.btn.dashBtn(href='/user/registerurbanfarmer') Register Urban Farmer
-        .row
-            a.btn.dashBtn(href='/data/farmerdatadashboard') Data dashboard
-        .row
-            a.btn.dashBtn(href='/dashboard/farmerdashboard') Maps
-        br.break
-        .row
-            a.btn.dashBtn.logout(href='/') Log out
+            .row
+                a.btn.dashBtn(href='/data/farmerdatadashboard') Data dashboard
+            .row
+                a.btn.dashBtn(href='/dashboard/farmerdashboard') Maps
+            br.break
+            .row
+            form(method='post' action='/login/logout')
+                button.btn.dashBtn.logout(type='submit') Log out
+
+        .col-8
+            .container-fluid
+                .th Current produce
+
+                .tr 
+
 .col-6.container-fluid
 #footer.container-fluid
     .row.foot

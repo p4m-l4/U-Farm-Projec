@@ -30,6 +30,11 @@ const uploadSchema = new mongoose.Schema({
 		default: "Pending",
 		enum: ["Pending", "Approved"],
 	},
+	availability: {
+		type: String,
+		default: "available",
+		enum: ["available", "booked", "N/A"]
+	},
 	productName: {
 		type: String,
 		required: false,

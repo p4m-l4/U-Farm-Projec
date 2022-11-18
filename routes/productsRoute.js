@@ -62,7 +62,7 @@ router.get("/update/:id", async (req, res) => {
         const updateProduct = await ProductUpload.findOne({_id: req.params.id});
         res.render("produce update", {product:updateProduct});
     } catch (error) {
-        res.status(400).send("Unable to update produce")
+        res.status(400).send("Unable to update product")
     }
 });
 
@@ -72,8 +72,19 @@ router.post("/update", async (req, res) => {
         await ProductUpload.findOneAndUpdate({_id:req.query.id}, req.body);
         res.redirect("/products-list");
     } catch (error) {
-        res.status(400).send("Unable to update produce")
+        res.status(400).send("Unable to update product")
     }
+});
+
+//Delete route
+router.post('/delete', async (req, res) => {
+	try {
+		await ProductUpload.deleteOne({ _id: req.body.id });
+        console.log("Item deleted")
+		res.redirect("back");
+	} catch (error) {
+		res.status(400).send("Unable to delete product");
+	}
 });
 
 // router.get("/products-list", async (req, res) => {
