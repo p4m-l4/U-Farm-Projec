@@ -13,7 +13,7 @@ nav.navbar
 form.form.container4(action='/produce/update?id='+product._id name='uploadForm' method='POST')
     h3.heading.register-heading Produce Update Form
     .row
-        
+
         #cell.col-4
             label.label Product name
                 br
@@ -25,12 +25,12 @@ form.form.container4(action='/produce/update?id='+product._id name='uploadForm' 
                 select.form-select(aria-label='Default select example' name='productType' type='text')
                     option(selected='') Select one
                     option(value='Organic' selected = product.productType === "Organic") Organic
-                    option(value='Non-organic'selected = product.productType === "Non-organic") Non-organic
+                    option(value='Non-organic' selected = product.productType === "Non-organic") Non-organic
         #cell.col-4
             label.label Date of upload
                 br
                 input.form-control(type='date' name='uploadDate' value = product.uploadDate)
-        
+
     .row
         #cell.col-4
             label.label Product sub-group
@@ -49,13 +49,14 @@ form.form.container4(action='/produce/update?id='+product._id name='uploadForm' 
             label.label Unit cost (UGX)
                 br
                 input.form-control(type='number' name='unitCost' value = product.unitCost)
-        
+
     .row
+        #cell.col-4
             label.label Residential Ward
-                br
-                select.form-select(aria-label='Default select example' name='ward' type='text')
-                    if currentUser
-                            option(value= currentUser._id) #{currentUser.ward}
+            br
+            select.form-select(aria-label='Default select example' name='ward' type='text')
+                if currentUser
+                    option(value= currentUser._id) #{currentUser.ward}
         #cell.col-4
             label.label Mode of delivery
                 br
@@ -63,13 +64,13 @@ form.form.container4(action='/produce/update?id='+product._id name='uploadForm' 
                     option(selected='') Select one
                     option(value='pick up' selected = product.delivery === "pick up") Pick up
                     option(value='delivery' selected = product.delivery === "delivery") Home delivery
-        
+
         #cell.row
             .mb-3
                 label.form-label.label(for='exampleFormControlTextarea1' value = product.exampleFormControlTextarea1) Directions for pick up
                     textarea#exampleFormControlTextarea1.form-control.text(rows='3' type='text' name='deliveryDirections')
     .row
-        button.btn.btn-primary.card-button(type='submit') Upload
+        button.btn.btn-primary.card-button(type='submit') Update
 
 .col-6.container-fluid
 #footer.container-fluid

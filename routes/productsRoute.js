@@ -45,9 +45,11 @@ router.post("/upload", connectEnsureLogin.ensureLoggedIn(), upload.single('produ
     }
 });
 
+//Getting the list of produce for farmer one approval
 router.get("/products-list", async (req, res) => {
     try {
-        let products = await ProductUpload.find();
+        // const order = {_id:-1};
+        let products = await ProductUpload.find().sort({ $natural: -1 });
         res.render("produce-list", { products: products });
     } catch (error) {
         res.status(400).send("Unable to get products list");
@@ -56,11 +58,114 @@ router.get("/products-list", async (req, res) => {
     
 });
 
+//Getting the list of products for the farmer one display
+router.get("/products-list", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ userID: req.body.userID }).sort({ $natural: -1 });
+		res.render("produce-list", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+//Getting the list of products for the client access
+router.get("/dairy-products", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ productGroup: 'dairy' }).sort({ $natural: -1 });
+		res.render("dairy-produce", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+router.get("/grain-products", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ productGroup: "cereal/grain" }).sort({ $natural: -1 });
+		res.render("grain-produce", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+router.get("/meat-products", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ productGroup: "butcher/meats" }).sort({ $natural: -1 });
+		res.render("meat-produce", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+router.get("/fruit-products", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ productGroup: "fruits" }).sort({ $natural: -1 });
+		res.render("fruit-produce", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+router.get("/vegetable-products", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ productGroup: "vegetables" }).sort({ $natural: -1 });
+		res.render("vegetable-produce", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+router.get("/oil-products", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ productGroup: "oils" }).sort({ $natural: -1 });
+		res.render("oil-produce", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+router.get("/spice-products", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ productGroup: "spices" }).sort({ $natural: -1 });
+		res.render("spices-produce", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+router.get("/other-products", async (req, res) => {
+	try {
+		// const order = {_id:-1};
+		let products = await ProductUpload.find({ productGroup: "other products" }).sort({ $natural: -1 });
+		res.render("other-produce", { products: products });
+	} catch (error) {
+		res.status(400).send("Unable to get products list");
+		console.log(error);
+	}
+});
+
+
+
 //Updating produce
 router.get("/update/:id", async (req, res) => {
     try {
         const updateProduct = await ProductUpload.findOne({_id: req.params.id});
-        res.render("produce update", {product:updateProduct});
+        res.render("produce-update", {product:updateProduct});
     } catch (error) {
         res.status(400).send("Unable to update product")
     }
@@ -70,7 +175,7 @@ router.get("/update/:id", async (req, res) => {
 router.post("/update", async (req, res) => {
     try {
         await ProductUpload.findOneAndUpdate({_id:req.query.id}, req.body);
-        res.redirect("/products-list");
+        res.redirect("/produce/products-list");
     } catch (error) {
         res.status(400).send("Unable to update product")
     }

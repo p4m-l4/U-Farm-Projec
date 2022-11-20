@@ -22,11 +22,11 @@ nav.navbar
                 br
                 input.client-search(alt='Search by product or category')
         .row
-            a.button(href='/dashboard/clientDashboard') Sign In
-        br
-        .row(style='text-align: center;')
             a.button(action='/user/registerGeneral')
             | Dont have an account? Click here to register
+        form(method='post' action='/login/logout')
+                button.btn.dashBtn.logout(type='submit') Log out
+
 .container-fluid(style='background-color: rgb(255, 255, 255); height: 100vh')
     .container-fluid
         .row.items1
@@ -34,46 +34,54 @@ nav.navbar
                 img.card-img-top(src='https://media.istockphoto.com/photos/various-kinds-of-dairy-products-on-a-rustic-wooden-table-picture-id1226425140?k=20&m=1226425140&s=170667a&w=0&h=-XERHeXi1g9qbpU4Nak5lzTR4XqHIhIlEBC6Ijw4Pzg=' alt='...')
                 .row(style='border-color: black; border-width: 2px')
                     h7.card-title.item-heading
-                        strong Dairy products
+                        a.btn.dashBtn(href='/produce/dairy-products') 
+                            strong Dairy products
 
             .cardc
                 img.card-img-top(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsXx2dGXT239s5leMlTQ0USKeZubhlyi3oBlhfBfG0zyPBy5LXZ1X8IQTrMmhRLuC6ku8&usqp=CAU' alt='...')
                 .card-body
                     h7.card-title.item-heading
-                        strong Cereal/Grain products
+                        a.btn.dashBtn(href='/produce/grain-products')
+                            strong Cereal/Grain products
 
             .cardc
                 img.card-img-top(src='https://thumbs.dreamstime.com/b/fresh-raw-meat-beef-pork-chicken-wooden-background-38633993.jpg' alt='...')
                 .card-body
                     h7.card-title.item-heading
-                        strong Butcher/ meats
+                        a.btn.dashBtn(href='/produce/meat-products')
+                            strong Butcher/ meats
 
             .cardc
                 img.card-img-top(src='https://w0.peakpx.com/wallpaper/865/381/HD-wallpaper-different-fruits-background-with-fruits-pineapple-mango-grapes-strawberries-kiwi-bananas-oranges-plums.jpg' alt='...')
                 .card-body
                     h7.card-title.item-heading
-                        strong Fruits
+                        a.btn.dashBtn(href='/produce/fruit-products')
+                            strong Fruits
         .row.items2
             .cardc
                 img.card-img-top(src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Ecologically_grown_vegetables.jpg/1200px-Ecologically_grown_vegetables.jpg' alt='...')
                 .card-body
                     h7.card-title.item-heading
-                        strong Vegetables
+                        a.btn.dashBtn(href='/produce/vegetable-products')
+                            strong Vegetables
             .cardc
                 img.card-img-top(src='https://s20427.pcdn.co/wp-content/uploads/2017/01/The-Top-8-Healthiest-Cooking-Oils.jpg' alt='...')
                 .row
                     h7.card-title.item-heading
-                        strong Oils
+                        a.btn.dashBtn(href='/produce/oil-products')
+                            strong Oils
             .cardc
                 img.card-img-top(src='https://static.toiimg.com/thumb/74416043.cms?width=400&height=300&resizemode=4&imgsize=1947366' alt='...')
                 .card-body
                     h7.card-title.item-heading
-                        strong Spices
+                        a.btn.dashBtn(href='/produce/spice-products')
+                            strong Spices
             .cardc
                 img.card-img-top(src='https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-search-icon-png-image_927190.jpg' alt='...')
                 .card-body
                     h7.card-title.item-heading
-                        strong Other products
+                        a.btn.dashBtn(href='/produce/other-products')
+                            strong Other products
 .col-6.container-fluid
 #footer.container-fluid
     .row.foot

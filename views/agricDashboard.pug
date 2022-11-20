@@ -8,10 +8,10 @@ head
     link(rel='stylesheet' href='../css/urban.css')
     title Agric Officer Dashboard
 nav.navbar
-        a.navbar-brand(href='/') Urban Farming Initiative
-        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-            span.navbar-toggler-icon
-        
+    a.navbar-brand(href='/') Urban Farming Initiative
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+
 .container-fluid
     .col-4.container3
         .row
@@ -20,7 +20,7 @@ nav.navbar
             a.btn.dashBtn(href ='/data/agricdatadasboard' name='datadashboard') Data dashboard
         .row
             a.btn.dashBtn(action='/') Maps
-        br.break
+            br.break
             .row
             form(method='post' action='/login/logout')
                 button.btn.dashBtn.logout(type='submit') Log out
@@ -28,9 +28,9 @@ nav.navbar
         .col-8
             .container-fluid
                 .th Current produce
-                
+
                 .tr 
-                
+
 .col-6.container-fluid
 #footer.container-fluid
     .row.foot
