@@ -12,6 +12,17 @@ router.get("/agricdatadasboard", async (req, res) => {
     }
 	
 });
+
+router.get("/agricdatadashboard2", async (req, res) => {
+	try {
+		let items = await User.find({ role: "urbanfarmer" });
+		res.render("datadashboardAgric-2", { urbanfarmers: items });
+	} catch (error) {
+		res.send(400).send("Unable to find Urban Farmers in the database.");
+		console.log(error);
+	}
+});
+
 router.get("/farmerdatadashboard", async (req, res) => {
 	try {
 		let items = await User.find({ role: "urbanfarmer" });

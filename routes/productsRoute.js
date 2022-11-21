@@ -181,6 +181,26 @@ router.post("/update", async (req, res) => {
     }
 });
 
+//Approving produce
+router.get("/approve/:id", async (req, res) => {
+    try {
+        const approveProduct = await ProductUpload.findOne({_id: req.params.id});
+        res.render("produce-approve", {product:approveProduct});
+    } catch (error) {
+        res.status(400).send("Unable to approve product")
+    }
+});
+
+//Post Approved produce
+router.post("/approve", async (req, res) => {
+    try {
+        await ProductUpload.findOneAndUpdate({_id:req.query.id}, req.body);
+        res.redirect("/produce/products-list");
+    } catch (error) {
+        res.status(400).send("Unable to update product")
+    }
+});
+
 //Delete route
 router.post('/delete', async (req, res) => {
 	try {

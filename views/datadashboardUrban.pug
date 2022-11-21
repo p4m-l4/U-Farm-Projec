@@ -12,49 +12,51 @@ nav.navbar
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
 
-header.card-header 
-    h4.card-title List of Farmer ones 
 
+header.card-header
+    h4.card-title List of Current Produce
 br
 nav
 #nav-tab.nav.nav-tabs(role='tablist')
-    a#nav-profile-tab.nav-item.nav-link(href='/registerFarmerOne') Register FarmerOne
+    a#nav-profile-tab.nav-item.nav-link(href='/produce/producelist') List of Current Produce
 #nav-tabContent.tab-content
 br
 table.table.table-bordered
     thead
         tr
-            th Full Name
-            th NIN Number
-            th Gender
-            th Phone number
-            th Activities
+            th Product Image
+            th Product Name
+            th Type
+            th Category
+            th Cost
+            th Status
+            th Supplier
             th Ward
-            th Duration of stay in ward
             th Update
             th Delete
         tbody
-            if farmerones.length
-                each farmerone in farmerones
-                    tr
-                        td #{farmerone.firstName+" "+farmerone.lastName}
-                        td #{farmerone.NIN}
-                        td #{farmerone.gender}
-                        td #{farmerone.phoneNumber}
-                        td #{farmerone.activities}
-                        td #{farmerone.ward}
-                        td #{farmerone.wardDuration}
-                        //- td #{moment(us
-                        td
-                            a
-                                button.btn.btn-primary.btn-block(href='/farmerOne/update/'+farmerone._id) Update
-                        td
-                            form(method="post" action='/farmerOne/delete')
-                                input(type="hidden" placeholder="" name="id", value=farmerone._id)
-                                button.btn.btn-danger.btn-block(type="submit") Delete
-div.form-row
-    div.col.form-group
-        a(class='button' href='/agricOfficerDash') Back
+            if products.length
+                each product in 
+                    if product.status == "Pending"
+                        tr
+                            td 
+                                img(src="/"+product.productImage, alt="Image" width="150px" height="170px")
+                            td #{product.productName}
+                            td #{product.productType}
+                            td #{product.productGroup}
+                            td #{product.unitCost}
+                            td #{product.status}
+                            td #{product.userID}
+                            td #{product.ward}
+                            td
+                                a.btn.btn-primary.btn-block(href='/produce/update/'+product._id) Update
+                            td
+                                form(method="post" action='/produce/delete')
+                                    input(type="hidden" placeholder="" name="id", value=product._id)
+                                    button.btn.btn-danger.btn-block(type="submit") Delete
+    div.form-row
+        div.col.form-group
+            a(class='button' href='/dashboard/farmerdashboard') Back
 
 .col-6.container-fluid
 #footer.container-fluid
@@ -70,6 +72,6 @@ div.form-row
                 .li.footer-txt  Contact us 
                 .li.footer-txt  Log in
         .col-3
-    div.col-md-12 © 2022 Refactory Cohort 12, UFarm by Namala Pamela
+        div.col-md-12 © 2022 Refactory Cohort 12, UFarm by Namala Pamela
 script(src='../app.js')
 script(src='css/bootstrap/js/bootstrap.bundle.js')

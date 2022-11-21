@@ -1,0 +1,42 @@
+doctype html
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    // CSS only
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
+    link(rel='stylesheet' href='../css/urban.css')
+    title Urban Farming Initiative
+nav.navbar
+    .container-fluid
+        a.navbar-brand(href='/') Urban Farming Initiative
+form.form.container4(action='/produce/update?id='+product._id name='uploadForm' method='POST')
+    h3.heading.register-heading Produce Update Form
+    .row
+        #cell.col-4
+            label.label Product status
+                br
+                select.form-select(aria-label='Default select example' name='status' type='text')
+                    option(selected='') Select one
+                    option(value='Pending' selected = product.status === "Pending") Pending
+                    option(value='Approved' selected = product.status === "Approved") Approved
+        
+    .row
+        button.btn.btn-primary.card-button(type='submit') Update
+
+.col-6.container-fluid
+#footer.container-fluid
+    .row.foot
+        .col-4
+            p.footer-txt A network by the farmers for the farmers! Join the ever expanding U-Farm network today.
+            .br
+        .col-5
+            p.footer-txt  Not a farmer? Browse the different products on display and find farmers near you.
+            .br
+            .ul 
+                .li.footer-txt  Home
+                .li.footer-txt  Contact us 
+                .li.footer-txt  Log in
+        .col-3
+script(src='../app.js')
+script(src='css/bootstrap/js/bootstrap.bundle.js')

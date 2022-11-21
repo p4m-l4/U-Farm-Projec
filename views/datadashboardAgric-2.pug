@@ -12,15 +12,14 @@ nav.navbar
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
 
-
-header.card-header
-    h4.card-title List of Farmer ones
-br
-nav
-#nav-tab.nav.nav-tabs(role='tablist')
-    a#nav-profile-tab.nav-item.nav-link(href='/user/registerFarmer' style='text-align : left') Add Farmer One
-#nav-tabContent.tab-content
-br
+header.card-header 
+    h4.card-title List of Urban Farmers 
+    br
+    nav
+    #nav-tab.nav.nav-tabs(role='tablist')
+        
+    #nav-tabContent.tab-content
+    br
 table.table.table-bordered
     thead
         tr
@@ -31,30 +30,23 @@ table.table.table-bordered
             th Activities
             th Ward
             th Duration of stay in ward
-            th Update
-            th Delete
+            
         tbody
-            if farmerones.length
-                each farmerone in farmerones
+            if urbanfarmers.length
+                each urbanfarmer in urbanfarmers
                     tr
-                        td #{farmerone.firstName+" "+farmerone.lastName}
-                        td #{farmerone.NIN}
-                        td #{farmerone.gender}
-                        td #{farmerone.phoneNumber}
-                        td #{farmerone.activities}
-                        td #{farmerone.ward}
-                        td #{farmerone.wardDuration}
-                        //- td #{moment(us
-                        td
-                            a.btn.btn-primary.btn-block(href='/produce/update/'+farmerone._id) Update
-                        td
-                            form(method="post" action='/data/delete')
-                                input(type="hidden" placeholder="" name="id", value=farmerone._id)
-                                button.btn.btn-danger.btn-block(type="submit") Delete
-div.form-row
-    div.col.form-group
-        a(class='button' href='/dashboard/agricdashboard') Back
-
+                        td #{urbanfarmer.firstName+" "+urbanfarmer.lastName}
+                        td #{urbanfarmer.NIN}
+                        td #{urbanfarmer.gender}
+                        td #{urbanfarmer.phoneNumber}
+                        td #{urbanfarmer.activities}
+                        td #{urbanfarmer.ward}
+                        td #{urbanfarmer.wardDuration}
+                        
+                            
+    div.form-row
+        div.col.form-group
+            a(class='button' href='/dashboard/agricdashboard') Back
 .col-6.container-fluid
 #footer.container-fluid
     .row.foot
@@ -69,6 +61,4 @@ div.form-row
                 .li.footer-txt  Contact us 
                 .li.footer-txt  Log in
         .col-3
-    div.col-md-12 © 2022 Refactory Cohort 12, UFarm by Namala Pamela
-script(src='../app.js')
-script(src='css/bootstrap/js/bootstrap.bundle.js')
+        div.col-md-12 © 2022 Refactory Cohort 12, UFarm by Namala Pamela

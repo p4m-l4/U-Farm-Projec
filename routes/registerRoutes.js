@@ -22,7 +22,7 @@ router.post("/registeragricofficer", connectEnsureLogin.ensureLoggedIn(), async 
 				if (error) {
 					throw error;
 				}
-				res.redirect("/");
+				res.redirect("/registeragricofficer");
 			});
 		}
 	} catch (error) {
@@ -50,7 +50,7 @@ router.post("/registerurbanfarmer", connectEnsureLogin.ensureLoggedIn(), async (
 				if (error) {
 					throw error;
 				}
-				res.redirect("/");
+				res.redirect("/dashboard/urbandashboard");
 			});
 		}
 	} catch (error) {
@@ -59,10 +59,10 @@ router.post("/registerurbanfarmer", connectEnsureLogin.ensureLoggedIn(), async (
 	}
 });
 
-router.get("/registerGeneral", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+router.get("/registerGeneral", (req, res) => {
 	res.render("registerGeneral");
 });
-router.post("/registerGeneral", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
+router.post("/registerGeneral", async (req, res) => {
 	console.log(req.body);
 	try {
 		const user = new User(req.body);
@@ -100,7 +100,7 @@ router.post("/registerFarmer", connectEnsureLogin.ensureLoggedIn(), async (req, 
 				if (error) {
 					throw error;
 				}
-				res.redirect("/");
+				res.redirect("/dashboard/farmerdashboard");
 			});
 		}
 	} catch (error) {

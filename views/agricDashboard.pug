@@ -13,17 +13,18 @@ nav.navbar
         span.navbar-toggler-icon
 
 .container-fluid
-    .col-4.container3
-        .row
-            a.btn.dashBtn(href='/user/registerFarmer' name='register') Register Farmer One
-        .row
-            a.btn.dashBtn(href ='/data/agricdatadasboard' name='datadashboard') Data dashboard
-        .row
-            a.btn.dashBtn(action='/') Maps
-            br.break
+    .row.dashboard
+        .col-4.container3
             .row
-            form(method='post' action='/login/logout')
-                button.btn.dashBtn.logout(type='submit') Log out
+                a.btn.dashBtn(href='/user/registerFarmer' name='register') Register Farmer One
+            .row
+                a.btn.dashBtn(href ='/data/agricdatadasboard' name='datadashboard') List of registered Farmer Ones
+            .row
+                a.btn.dashBtn(href='/data/agricdatadashboard2') List of registered Urban Farmers
+                br.break
+                .row
+                form(method='post' action='/login/logout')
+                    button.btn.dashBtn.logout(type='submit') Log out
 
         .col-8
             .container-fluid

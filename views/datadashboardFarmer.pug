@@ -17,7 +17,7 @@ header.card-header
     br
     nav
     #nav-tab.nav.nav-tabs(role='tablist')
-        a#nav-profile-tab.nav-item.nav-link(href='/registerFarmer') Register Urban farmer
+        a#nav-profile-tab.nav-item.nav-link(href='/registerurbanfarmer') Add Urban farmer
     #nav-tabContent.tab-content
     br
 table.table.table-bordered
@@ -51,9 +51,9 @@ table.table.table-bordered
                             form(method="post" action='/farmerOne/delete')
                                 input(type="hidden" placeholder="" name="id", value=urbanfarmer._id)
                                 button.btn.btn-danger.btn-block(type="submit") Delete
-    div.form-row
-        div.col.form-group
-            a(class='button' href='/agricOfficerDash') Back
+div.form-row
+    div.col.form-group
+        a(class='button' href='/dashboard/farmerdashboard') Back
 .col-6.container-fluid
 #footer.container-fluid
     .row.foot
