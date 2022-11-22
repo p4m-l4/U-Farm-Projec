@@ -35,7 +35,17 @@ router.get("/farmerdatadashboard", async (req, res) => {
 router.get("/urbandatadashboard", async (req, res) => {
 	try {
 		let items = await User.find({ role: "urbanFarmer" });
-		res.render("datadashboardUrban", { farmerones: items });
+		res.render("datadashboardUrban", { products: items });
+	} catch (error) {
+		res.send(400).send("Unable to find Urban Farmers in the database.");
+		console.log(error);
+	}
+});
+
+router.get("/urbandatadashboard2", async (req, res) => {
+	try {
+		let items = await User.find({ role: "urbanFarmer" });
+		res.render("datadashboardUrban2", { products: items });
 	} catch (error) {
 		res.send(400).send("Unable to find Urban Farmers in the database.");
 		console.log(error);

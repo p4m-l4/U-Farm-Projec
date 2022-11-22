@@ -22,8 +22,9 @@ nav.navbar
                 br
                 input.client-search(alt='Search by product or category')
         .row
-            a.button(action='/user/registerGeneral')
-            | Dont have an account? Click here to register
+            #cell.col
+                a.button(action='/user/registerGeneral')
+                | Dont have an account? Click here to register
         form(method='post' action='/login/logout')
                 button.btn.dashBtn.logout(type='submit') Log out
 
@@ -32,7 +33,7 @@ nav.navbar
         .row.items1
             .cardc
                 img.card-img-top(src='https://media.istockphoto.com/photos/various-kinds-of-dairy-products-on-a-rustic-wooden-table-picture-id1226425140?k=20&m=1226425140&s=170667a&w=0&h=-XERHeXi1g9qbpU4Nak5lzTR4XqHIhIlEBC6Ijw4Pzg=' alt='...')
-                .row(style='border-color: black; border-width: 2px')
+                .row
                     h7.card-title.item-heading
                         a.btn.dashBtn(href='/produce/dairy-products') 
                             strong Dairy products
@@ -46,7 +47,7 @@ nav.navbar
 
             .cardc
                 img.card-img-top(src='https://thumbs.dreamstime.com/b/fresh-raw-meat-beef-pork-chicken-wooden-background-38633993.jpg' alt='...')
-                .card-body
+                .card-bodyc
                     h7.card-title.item-heading
                         a.btn.dashBtn(href='/produce/meat-products')
                             strong Butcher/ meats

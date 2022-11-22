@@ -1,31 +1,26 @@
 doctype html
 head
-    meta(charset='utf-8')
+    meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     // CSS only
-    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous')
     link(rel='stylesheet' href='../css/urban.css')
     title Urban Farming Initiative
 nav.navbar
     .container-fluid
         a.navbar-brand(href='/') Urban Farming Initiative
-form.form.container4(action='/produce/update?id='+product._id name='uploadForm' method='POST')
-    h3.heading.register-heading Produce Approval Form
-    .row
-
-        #cell.col-4
-            label.label Product name
-                br
-                input.form-control(type="text" name='productName')
+form.form.container4(action='/produce/availability?id='+product._id name='uploadForm' method='POST')
+    h3.heading.register-heading Produce Update Form
     .row
         #cell.col-4
-            label.label Product status
+            label.label Product Availability
                 br
-                select.form-select(aria-label='Default select example' name='status' type='text')
+                select.form-select(aria-label='Default select example' name='availability' type='text')
                     option(selected='') Select one
-                    option(value='Pending' selected = product.status === "Pending") Pending
-                    option(value='Approved' selected = product.status === "Approved") Approved
+                    option(value='available' selected = product.status === "available") Available
+                    option(value='booked' selected = product.status === "booked") Booked
+                    option(value='N/A' selected = product.status === "N/A") N/A
         
     .row
         button.btn.btn-primary.card-button(type='submit') Update

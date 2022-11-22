@@ -15,21 +15,32 @@ nav.navbar
 .container-fluid
     .row.dashboard
         .col-4.container3
+            .container.organize
+                .row
+                    a.btn.dashBtn(href='/produce/upload') Post New Products
+                .row
+                    a.btn.dashBtn(href='/data/urbandatadashboard') View posted produce
+                .row
+                    a.btn.dashBtn(href='/data/urbandatadashboard2') View pending produce
+                br.break
+                .row
+                form(method='post' action='/login/logout')
+                    button.btn.dashBtn.logout(type='submit') Log out
+        .col-8.content
             .row
-                a.btn.dashBtn(href='/produce/upload') Post New Products
+                .col.container5
+                    .th Current produce uploaded
+                        .td.data 300 products
+                .col.container5
+                    .th Pending produce
+                        .td.data 56 products
+                .col.container5
+                    .th Booked produce
+                        .td.data 25 products
             .row
-                a.btn.dashBtn(href='/produce/products-list') View posted produce
-            .row
-                a.btn.dashBtn(href='/data/urbandatadashboard') Data dashboard
-            br.break
-            .row
-            form(method='post' action='/login/logout')
-                button.btn.dashBtn.logout(type='submit') Log out
-        .col-8
-            .container-fluid
-                .th Current produce
+                h3 Booked produce
+                .col.container6
                 
-                .tr 
 
 .col-6.container-fluid
 #footer.container-fluid

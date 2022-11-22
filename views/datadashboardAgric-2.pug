@@ -11,39 +11,39 @@ nav.navbar
     a.navbar-brand(href='/') Urban Farming Initiative
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
-
-header.card-header 
-    h4.card-title List of Urban Farmers 
-    br
-    nav
-    #nav-tab.nav.nav-tabs(role='tablist')
-        
-    #nav-tabContent.tab-content
-    br
-table.table.table-bordered
-    thead
-        tr
-            th Full Name
-            th NIN Number
-            th Gender
-            th Phone number
-            th Activities
-            th Ward
-            th Duration of stay in ward
+.container7
+    header.card-header 
+        h4.card-title List of Urban Farmers 
+        br
+        nav
+        #nav-tab.nav.nav-tabs(role='tablist')
             
-        tbody
-            if urbanfarmers.length
-                each urbanfarmer in urbanfarmers
-                    tr
-                        td #{urbanfarmer.firstName+" "+urbanfarmer.lastName}
-                        td #{urbanfarmer.NIN}
-                        td #{urbanfarmer.gender}
-                        td #{urbanfarmer.phoneNumber}
-                        td #{urbanfarmer.activities}
-                        td #{urbanfarmer.ward}
-                        td #{urbanfarmer.wardDuration}
-                        
+        #nav-tabContent.tab-content
+        br
+    table.table.table-bordered
+        thead
+            tr
+                th Full Name
+                th NIN Number
+                th Gender
+                th Phone number
+                th Activities
+                th Ward
+                th Duration of stay in ward
+                
+            tbody
+                if urbanfarmers.length
+                    each urbanfarmer in urbanfarmers
+                        tr
+                            td #{urbanfarmer.firstName+" "+urbanfarmer.lastName}
+                            td #{urbanfarmer.NIN}
+                            td #{urbanfarmer.gender}
+                            td #{urbanfarmer.phoneNumber}
+                            td #{urbanfarmer.activities}
+                            td #{urbanfarmer.ward}
+                            td #{urbanfarmer.wardDuration}
                             
+                                
     div.form-row
         div.col.form-group
             a(class='button' href='/dashboard/agricdashboard') Back

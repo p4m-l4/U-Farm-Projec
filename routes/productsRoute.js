@@ -201,6 +201,27 @@ router.post("/approve", async (req, res) => {
     }
 });
 
+
+//Sales (booking) produce
+router.get("/availability/:id", async (req, res) => {
+    try {
+        const saleProduct = await ProductUpload.findOne({_id: req.params.id});
+        res.render("produce-update copy", {product:saleProduct});
+    } catch (error) {
+        res.status(400).send("Unable to book product")
+    }
+});
+
+//Post available produce
+router.post("/availability", async (req, res) => {
+    try {
+        await ProductUpload.findOneAndUpdate({_id:req.query.id}, req.body);
+        res.redirect("/produce/products-list");
+    } catch (error) {
+        res.status(400).send("Unable to update product")
+    }
+});
+
 //Delete route
 router.post('/delete', async (req, res) => {
 	try {

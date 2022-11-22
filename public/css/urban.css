@@ -46,7 +46,9 @@
     height: 80vh;
     object-fit: cover;
 }
-
+.container10{
+    margin-left: 60px;
+}
 .signIn{
     align-content: center;
     height: 9px;
@@ -56,6 +58,30 @@
     border-color: rgb(27, 84, 34);
     border-radius: 20px;
     border-width: 2px;
+}
+.sign{
+    width: 200px;
+    height: 50px;
+    margin: 50px;
+    margin-bottom: 0px;
+    background-color: white;
+    color:rgb(0, 0, 0);
+    border-color: rgb(27, 84, 34);
+    border-radius: 20px;
+    border-width: 2px;
+    padding-top: 10px;
+}
+.forgot{
+    width: 200px;
+    height: 50px;
+    margin: 50px;
+    margin-bottom: 0px;
+    background-color: white;
+    color:rgb(0, 0, 0);
+    border-color: rgb(27, 84, 34);
+    border-radius: 20px;
+    border-width: 0px;
+    padding-top: 10px;
 }
 
 .card {
@@ -241,8 +267,11 @@
     height: 300px;
     margin: 20px;
     border-style: double;
-    border-color: rgba(0, 0, 0, 0.268); 
+    border-color: rgba(255, 255, 255, 0); 
     border-width: 1px;
+}
+.card-bodyc{
+    height:0px;
 }
 .items1{
     margin-top: 3%;
@@ -258,6 +287,8 @@
 .card-img-top{
     width: 300px;
     height: 250px;
+    border-radius: 10px;
+    margin-bottom: 0px;
 }
 .item-heading{
     margin: 0%;
@@ -284,7 +315,7 @@
     width: 50vh; 
     height: 5vh;
     margin: 0px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .client-search-txt{
     margin: 30px;
@@ -294,5 +325,59 @@
 /*Other dashboards*/
 .dashboard{
     padding: 0px;
+}
+.container5{
+    height: 200px;
+    width: 300px;
+    border-width: 2px;
+    border-color: grey;
+    border-radius: 20px;
+    border-style: double;
+    padding: 20px;
+    margin: 50px;
+}
+.container6{
+    height: 250px;
+    width: 800px;
+    border-width: 2px;
+    border-color: grey;
+    border-radius: 20px;
+    border-style: double;
+    padding: 20px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.data{
+    font-size:xx-large;
+    padding-top: 30px;
+}
+.content{
+    margin-left: 150px;
+}
+.container7{
+    width: 150vh;
+    margin-left:20vh;
+    margin-top:5vh;
+    margin-bottom: 5vh;
+    border-radius: 20px;
+    height: 80vh;
+}
+.container8{
+    width: 150vh;
+    margin-left:20vh;
+    margin-top:5vh;
+    margin-bottom: 5vh;
+    border-radius: 20px;
+}
+.container9{
+    height: 200px;
+    width: 300px;
+    border-width: 2px;
+    border-color: grey;
+    border-radius: 20px;
+    border-style: double;
+    padding: 20px;
+    margin: 80px;
+    margin-bottom: 50px;
 }
 

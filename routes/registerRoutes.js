@@ -50,7 +50,7 @@ router.post("/registerurbanfarmer", connectEnsureLogin.ensureLoggedIn(), async (
 				if (error) {
 					throw error;
 				}
-				res.redirect("/dashboard/urbandashboard");
+				res.redirect("/dashboard/farmerdashboard");
 			});
 		}
 	} catch (error) {
@@ -100,7 +100,7 @@ router.post("/registerFarmer", connectEnsureLogin.ensureLoggedIn(), async (req, 
 				if (error) {
 					throw error;
 				}
-				res.redirect("/dashboard/farmerdashboard");
+				res.redirect("/dashboard/agricdashboard");
 			});
 		}
 	} catch (error) {
